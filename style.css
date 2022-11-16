@@ -48,8 +48,9 @@ button:hover{
 }
 
 .container{
-  display:inline-table;
-  width:0px;
+  position: absolute;
+  display:inline-block;
+  width: 24vw;
   height: 130vw;
   padding: 0px;
   margin: 0px;
