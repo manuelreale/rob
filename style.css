@@ -1,0 +1,75 @@
+#card{
+  width: 200px;
+  height: 250px;
+  display: inline-block;
+  background-color: white;
+  /* border-radius: 24px; */
+  border: 1px solid black;
+  padding: 24px;
+  margin: 24px;
+  text-align: center;
+  font-family: "TT Firs Neue", sans-serif;
+  font-weight: lighter;
+}
+
+p{
+  font-family: "TT Firs Neue", sans-serif;
+  text-align: center;
+  font-weight: bolder;
+  padding: 0px;
+  margin: 4px;
+}
+
+button{
+  font-family: "TT Firs Neue", sans-serif;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid black;
+  margin: 20px;
+  height: 200px;
+  width: 200px;
+  font-size: large;
+}
+
+button:hover{
+  background-color: black;
+  color: white;
+}
+
+#thumbnail{
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 24px;
+}
+
+.tooltip-inner {
+  white-space: pre-wrap;
+}
+
+.container{
+  display:inline-table;
+  width:0px;
+  height: 130vw;
+  padding: 0px;
+  margin: 0px;
+  margin-right: -5px;
+  top:0px;
+  
+/* border: 1px solid black; */
+}
+
+#setupOpen{
+  position: absolute;
+  background-color: white;
+width: 100vw;
+height: 100vh;
+}
+
+#setupClose{
+  position: absolute;
+  background-color: white;
+width: 100vw;
+height: 100vh;
+display: none;
+}
