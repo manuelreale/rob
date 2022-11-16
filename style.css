@@ -1,15 +1,25 @@
 #card{
-  width: 200px;
-  height: 250px;
+  width: 20vw;
+  height: auto;
   display: inline-block;
   background-color: white;
   /* border-radius: 24px; */
   border: 1px solid black;
-  padding: 24px;
-  margin: 24px;
+  padding: 1vw;
+  margin: 1vw;
   text-align: center;
   font-family: "TT Firs Neue", sans-serif;
   font-weight: lighter;
+}
+
+#titolo{
+  font-family: "TT Firs Neue", sans-serif;
+  text-align: center;
+  font-weight: bolder;
+  padding: 1vw;
+  margin: 1vw;
+  width: 20vw;
+  height:20px;
 }
 
 p{
@@ -37,8 +47,8 @@ button:hover{
 }
 
 #thumbnail{
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  /* height: 200px; */
   object-fit: contain;
   border-radius: 24px;
 }
@@ -48,15 +58,16 @@ button:hover{
 }
 
 .container{
-  position: absolute;
+  position: relative;
   display:inline-block;
   width: 24vw;
   height: 130vw;
-  padding: 0px;
-  margin: 0px;
-  margin-right: -5px;
-  top:0px;
-  
+  float: left;
+  /* margin: 2vw; */
+  /*padding: 0px; */
+  /* margin: 0px;
+  margin-right: -5px; */
+  /* top:0px; */
 /* border: 1px solid black; */
 }
 
@@ -73,4 +84,9 @@ height: 100vh;
 width: 100vw;
 height: 100vh;
 display: none;
+}
+
+body{
+  margin: 0px;
+  padding: 0px;
 }
