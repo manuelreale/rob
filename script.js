@@ -8,6 +8,7 @@ let armadio3 = [];
 let armadio4 = [];
 let armadio5 = [];
 let armadio6 = [];
+
 let phase=1;
 
 let stile = "Ufficio"
