@@ -1,3 +1,74 @@
+@font-face {
+  font-family: 'TTFirsNeue';
+  src: url(./fonts/TTFirsNeue-Medium.ttf);
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'TTFirsNeue';
+  src: url(./fonts/TTFirsNeue-Regular.ttf);
+  font-weight:lighter;
+}
+
+@font-face {
+  font-family: 'TTFirsNeue';
+  src: url(./fonts/TTFirsNeue-DemiBold.ttf);
+  font-weight:900;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url(./fonts/Inter-Medium.ttf);
+  font-weight: 600;
+  font-style: medium;
+}
+
+#sideBar{
+  width:134px;
+  height:834px;
+  display:inline-block;
+  background-color: #ffffff;
+  vertical-align:top;
+}
+
+#logo{
+  margin:0px;
+  height:87px;
+  background-color: #FAFAFA ;
+  padding-left:20px;
+  padding-top:22px;
+}
+
+#logoFont{
+  font-size: 48px;
+  font-weight: 700;
+  margin-left: 0px;
+  margin-top: 0px;
+}
+
+h1{
+  font-family: 'TTFirsNeue';
+  color: #212121;
+  font-size: 52px;
+  font-weight: 900;
+  
+  text-align:left;
+  vertical-align:top;
+  margin: 0px;
+  margin-top: 20px;
+  margin-left: 36px;
+}
+
+main{
+  width:1260px;
+  height:834px;
+  display:inline-block;
+}
+
+body{
+  background-color: #FAFAFA;
+}
+
 #card{
   width: 20vw;
   height: auto;
@@ -12,6 +83,177 @@
   font-weight: lighter;
 }
 
+#garmentOfTheDayCard{
+  vertical-align:bottom;
+  width: 320px;
+  height: auto;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid #505050;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  margin-left: 36px;
+  text-align: left;
+  overflow: hidden;
+}
+
+#card{
+  width:468px;
+  height:calc(541px/3);
+  border: 0px solid #505050;
+  border-bottom: 1px solid #505050;
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+  
+}
+
+#card h2{
+  font-family: 'TTFirsNeue';
+  color: #212121;
+  font-size: 20px;
+  font-weight: 900;
+  width:260px;
+  
+  text-align:left;
+  vertical-align:top;
+  margin-left: 0px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#card img{
+  margin-top: 15px;
+  margin-left: 15px;
+  width: 150px;
+  height: 150px;
+  /* height: 200px; */
+  object-fit: contain;
+  display: inline-block;
+  border-radius: 20px;
+}
+
+#infoLabel{
+  text-align: left; 
+  display: inline-block;
+  font-family: 'Inter';
+  font-style: italic;
+  font-size: 14px;
+  color: #878787;
+  width:150px;
+  margin: 0;
+}
+
+#info{
+  text-align: left; 
+  display: inline-block;
+  font-family: 'TTFirsNeue';
+  font-size: 16px;
+  font-weight: 900;
+  color: #212121;
+  width:200px;
+  margin: 0;
+  margin-bottom: 12px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#card #infoLabel{
+  text-align: left; 
+  display: block;
+  font-family: 'Inter';
+  font-style: italic;
+  font-size: 12px;
+  color: #878787;
+  width:200px;
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+
+#card #info{
+  text-align: left; 
+  display: block;
+  font-family: 'TTFirsNeue';
+  font-size: 12px;
+  color: #212121;
+  width:200px;
+  margin: 0;
+  margin-bottom: 12px;
+  font-weight: 900;
+}
+
+#card #infoDiv{
+  display: inline-block;
+  vertical-align:top;
+  width:280px;
+  margin-left: 20px;
+}
+
+/* garemnt of the day */
+#garmentOfTheDayCard h3{
+  font-family: 'TTFirsNeue';
+  color: #212121;
+  font-size: 18px;
+  margin-top:0;
+  margin-right: 8px;
+  top:0px;
+  display: inline-block;
+}
+
+#infoCircle{
+  display:inline-block;
+  margin-top: -32px;
+  transform: translateY(10px);
+}
+
+#garmentOfTheDayCard h2{
+  font-family: 'TTFirsNeue';
+  color: #212121;
+  font-size: 32px;
+  font-weight: 900;
+  width:220px;
+  height:82px;
+  margin-top: 0;
+  display:-webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  vertical-align: middle;
+  
+}
+
+#thumbnailDiv{
+  margin:-20px;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom:12px;
+}
+
+#labelDiv{
+  display: inline-block;
+  width: 50%;
+  margin-bottom:12px;
+}
+
+
+
+#GOTDthumbnail{
+  margin-top: 10px;
+  width: 318px;
+  height: 318px;
+  /* height: 200px; */
+  object-fit: contain;
+  border-radius: 24px;
+}
+
 #titolo{
   font-family: "TT Firs Neue", sans-serif;
   text-align: center;
@@ -20,6 +262,19 @@
   margin: 1vw;
   width: 20vw;
   height:20px;
+}
+
+#tag{
+  height: 23px;
+  border-radius: 37px;
+  font-family: 'TTFirsNeue';
+  font-weight:lighter;
+  display: inline-block;
+  padding-top:2px;
+  padding-left:10px;
+  padding-right:10px;
+  color:white;
+  margin-right:10px;
 }
 
 p{
@@ -58,11 +313,7 @@ button:hover{
 }
 
 .container{
-  position: relative;
   display:inline-block;
-  width: 24vw;
-  height: 130vw;
-  float: left;
   /* margin: 2vw; */
   /*padding: 0px; */
   /* margin: 0px;
@@ -89,4 +340,26 @@ display: none;
 body{
   margin: 0px;
   padding: 0px;
+}
+
+
+.swiper {
+  width: 468px;
+  height: 541px;
+  display: inline-block;
+  vertical-align: bottom;
+  margin-bottom:24px;
+  
+  
+}
+
+.swiper-slide {
+  border-radius: 10px;
+  color: #fff;
+}
+
+.white{
+  background-color: white;
+  color: black;
+  border: 1px solid black;
 }

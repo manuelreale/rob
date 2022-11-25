@@ -2,12 +2,13 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 
     <title>vestiti</title>
   </head>
   <body id="body">
 <div id="setupOpen" style='z-index: 10'>
-  <button onclick="elegante()">Elegante</button>
+  <button id="button" onclick="elegante(this);>Elegante</button>
   <button onclick="ufficio()">Ufficio</button>
   <button onclick="casual()">Casual</button>
   <button onclick="glamour()">Glamour</button>
@@ -17,13 +18,32 @@
   <button onclick="cerimonia()">Cerimonia</button>
 </div>
 
-  <div class='container' style="left:0cvw" id="1"><p id="titolo">Vestito del giorno</p></div> <!--style='left:0vw'-->
-  <div class='container' id="2"><p id="titolo">Outfit 1</p></div>
-  <div class='container' id="3"><p id="titolo">Outfit 2</p></div>
-  <div class='container' id="4"><p id="titolo">Outfit 3</p></div>
+<div id="sideBar">
+  <div id="logo">
+    <h1 id="logoFont">Rob</h1>
+  </div>
+  <div id="tab"></div>
+  <div id="tab"></div>
+</div>
+<main>
+<h1>Today's outfits</h1>
+  <div class='container' id="1"></div> <!--style='left:0vw'-->
+<div style="display:inline-block; overflow: hidden; padding-left:300px; padding-right:200px; margin-left:-300px; margin-bottom:-5px;" id="wrapperS" >
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide white" id="2"></div>
+      <div class="swiper-slide white" id="3"></div>
+      <div class="swiper-slide white" id="4"></div>
+    </div>
+  </div>
+</div>
+</main>
+
+
   </body>
 </html>
 
 <!-- <script type="text/javascript" src="csvjson.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script type="text/javascript" src="functions.js"></script>
 <script type="text/javascript" src="script.js"></script>
