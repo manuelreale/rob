@@ -201,7 +201,7 @@ function showGarment(id, layer){
 
   const labelDiv1 = document.createElement("div");
   labelDiv1.id= 'labelDiv';
-  labelDiv1.style.width = "120px";
+  labelDiv1.style.width = "135px";
 
   const brandLabel = document.createElement("p");
   brandLabel.id= 'infoLabel';
@@ -484,13 +484,14 @@ function createSuggestions(){
 
   
   //showGarment(clothOfTheDay.Cloth_ID, clothOfTheDay.Layer)
-  showGarment(9, clothOfTheDay.Layer)
+  showGarment(4, clothOfTheDay.Layer)
   phase++
   createOutfit()
   phase++
   createOutfit()
   phase++
   createOutfit()
+  //
 
   console.log(idBlacklist)
 }
