@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>start</title>
+</head>
+
+<body>
+    <button id="accelPermsButton" style="height:50px;" onclick="getAccel()">
+        <h1>Start</h1>
+    </button>
+    <html>
+        <p>OFF</p>
+    </html>
+</body>
+</html>
+
+<script>
+    function getAccel(){
+    DeviceMotionEvent.requestPermission().then(response => {
+        if (response == 'granted') {
+
+            var status = document.querySelector("p")
+            status = "ON";
+            // Do stuff here
+
+        // Add a listener to get smartphone acceleration 
+            // in the XYZ axes (units in m/s^2)
+            window.addEventListener('devicemotion', (event) => {
+                console.log(event);
+            });
+       // Add a listener to get smartphone orientation 
+           // in the alpha-beta-gamma axes (units in degrees)
+            window.addEventListener('deviceorientation',(event) => {
+                console.log(event);
+            });
+        }
+    });
+}
+
+</script>

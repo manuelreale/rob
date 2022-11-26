@@ -60,13 +60,27 @@ h1{
 }
 
 main{
-  width:1260px;
-  height:834px;
+  width: 1194px;
+  height: 834px;
   display:inline-block;
 }
 
 body{
   background-color: #FAFAFA;
+}
+
+.error{
+  text-align: center;
+}
+
+div.error{
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+p.error{
+  font-weight: normal;
+  font-size: 20px;
 }
 
 #card{

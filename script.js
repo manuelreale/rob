@@ -84,6 +84,7 @@ function showCloth(id, layer){
 
   const thumbnail = document.createElement("img");
   thumbnail.src = armadio[id].Image
+  thumbnail.id = "imgOutfit"
 
   thumbnail.title =  
   armadio[id].Nome + "\n" +
@@ -520,6 +521,9 @@ document.addEventListener('keydown', (event)=> {
   if(event.key=='a'){
     //document.getElementById('body').style.backgroundColor='black'
     console.log('aaaa')
+    // document.getElementById("imgOutfit").style.opacity = "20%";
+    // DA SISTEMARE ID PER OGNI SINGOLO CAPO
+    document.getElementById("card").style.opacity = "20%";
   }
 
 });
