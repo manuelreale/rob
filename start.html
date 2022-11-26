@@ -6,31 +6,40 @@
     <title>start</title>
 </head>
 
-<body>
+<body id="caso">
     <button id="accelPermsButton" style="height:50px;" onclick="getAccel()">
         <h1>Start</h1>
     </button>
     <html>
-        <p>OFF</p>
+        <p>off</p>
     </html>
 </body>
 </html>
 
 <script>
+    var rotation = 0;
+
     function getAccel(){
     DeviceMotionEvent.requestPermission().then(response => {
         if (response == 'granted') {
 
             var status = document.querySelector("p")
-            status.innerHTML = "on";
+            // status.innerHTML = "on";
             // Do stuff here
 
-        // Add a listener to get smartphone acceleration 
+        // Add a listener to get smartphone acceleration
             // in the XYZ axes (units in m/s^2)
             window.addEventListener('devicemotion', (event) => {
                 console.log(event);
+                rotation = Math.floor((event.rotationRate.alpha)*100)+Math.floor((event.rotationRate.beta)*100)+Math.floor((event.rotationRate.gamma)*100);
+                if (rotation >= 2000 || rotation <=-2000){
+                  document.getElementById("caso").style.backgroundColor = "white";
+                }
+                else {
+                  document.getElementById("caso").style.backgroundColor = "black";
+                }
             });
-       // Add a listener to get smartphone orientation 
+       // Add a listener to get smartphone orientation
            // in the alpha-beta-gamma axes (units in degrees)
             window.addEventListener('deviceorientation',(event) => {
                 console.log(event);
