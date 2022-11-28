@@ -566,13 +566,32 @@ button:hover {
 }
 
 .selectBtn {
-  width: 700px;
-  height: 600px;
-  display: inline-block;
-  justify-content: center;
-  vertical-align: bottom;
-  margin-bottom: 24px;
-  border-radius: 10px;
-  background-color: #fff;
-  margin-left: 16px;
+  border-radius: 100px;
+  background-color: white;
+  color: black;
+  font-size: 24px;
+  font-weight: 200;
+  text-align: left;
+  width: 185px;
+  height: 52px;
+  margin: 8px 16px;
+  /* padding-left: 16px; */
+  width: 95%;
+  /* box-sizing: border-box; */
+}
+
+.disabled {
+  border-radius: 100px;
+  background-color: white;
+  color: #C6C6C6;
+  font-size: 24px;
+  font-weight: 200;
+  text-align: left;
+  width: 185px;
+  height: 52px;
+  margin: 8px 16px;
+  /* padding-left: 16px; */
+  width: 95%;
+  /* box-sizing: border-box; */
+ 
 }
