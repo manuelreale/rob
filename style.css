@@ -110,7 +110,7 @@ p.error {
   font-weight: lighter;
 }
 
-#garmentOfTheDayCard {
+.garmentOfTheDayCard {
   vertical-align: bottom;
   width: 320px;
   height: auto;
@@ -227,7 +227,7 @@ p.error {
 }
 
 /* garemnt of the day */
-#garmentOfTheDayCard h3 {
+.garmentOfTheDayCard h3 {
   font-family: 'TTFirsNeue';
   color: #212121;
   font-size: 18px;
@@ -243,7 +243,7 @@ p.error {
   transform: translateY(10px);
 }
 
-#garmentOfTheDayCard h2 {
+.garmentOfTheDayCard h2 {
   font-family: 'TTFirsNeue';
   color: #212121;
   font-size: 32px;

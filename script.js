@@ -160,7 +160,8 @@ function showGarment(id, layer){
   }
   
   const card = document.createElement("div");
-  card.id= 'garmentOfTheDayCard';
+  card.className= 'garmentOfTheDayCard';
+  card.id= id;
 
   const thumbnailDiv = document.createElement("div");
   thumbnailDiv.id= 'thumbnailDiv';
@@ -485,15 +486,22 @@ function sport(){stile = ["Sport"]; document.getElementById('setupOpen').id = 's
 
 
 document.addEventListener('keydown', (event)=> {    
-  if(event.key=='a'){
-    //document.getElementById('body').style.backgroundColor='black'
-    console.log('aaaa')
-    // document.getElementById("imgOutfit").style.opacity = "20%";
-    // DA SISTEMARE ID PER OGNI SINGOLO CAPO
-    document.getElementById("card").style.opacity = "20%";
+  if(event.key=='w'){
+    
+    document.getElementById("34").querySelector(".inUseLabel").style = 'display: inline; opacity: 100%;'
+    document.getElementById("34").querySelector("#infoDiv").style.opacity = "20%";
+    document.getElementById("34").querySelector("#imgOutfit").style.opacity = "20%";
+  }
+  if(event.key=='s'){
+    
+    document.getElementById("34").querySelector(".inUseLabel").style = 'display: none; opacity: 100%;'
+    document.getElementById("34").querySelector("#infoDiv").style.opacity = "100%";
+    document.getElementById("34").querySelector("#imgOutfit").style.opacity = "100%";
   }
 
 });
+
+
 
 
 
