@@ -160,7 +160,8 @@ function showGarment(id, layer){
   }
   
   const card = document.createElement("div");
-  card.id= 'garmentOfTheDayCard';
+  card.className= 'garmentOfTheDayCard';
+  card.id= id;
 
   const thumbnailDiv = document.createElement("div");
   thumbnailDiv.id= 'thumbnailDiv';
