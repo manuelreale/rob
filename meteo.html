@@ -14,7 +14,7 @@
     <span id="dot"></span>
 </div>
 <div id="logo">
-    <img src=".\svg\logo.svg" height="250" width="250" style="display: inline;">
+    <img src=".\svg\logo.svg" height="250" width="250"  id="logoSvg" style="display: inline;">
 </div>
 
   
@@ -355,3 +355,17 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script type="text/javascript" src="functions.js"></script>
 <script type="text/javascript" src="script-meteo.js"></script>
+
+<script>
+
+  document.addEventListener('keydown', (event)=> {    
+    if(event.key=='a'){
+      document.getElementById("dot").style.animation = "scaleCircle 1.5s ease-in forwards 0s"
+      document.getElementById("black").style.animation = "disappearing 0.5s ease-in forwards 2.5s"
+      document.getElementById("logo").style.animation = "logoOpacity 1s ease-in forwards 1s, disappearing 0.5s ease-in forwards 4s"
+      document.getElementById("logoSvg").style.animation = 'disappearing 0.5s ease-in forwards 3s' 
+    }
+  
+  });
+  
+  </script>
