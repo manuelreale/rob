@@ -24,7 +24,7 @@
 }
 
 #sideBar{
-  width:134px;
+  /* width:134px; */
   height:834px;
   float:left;
   /* display:inline-block; */
@@ -58,24 +58,28 @@ h1{
   margin: 0px;
   margin-top: 20px;
   margin-left: 36px;
+  display: inline;
 }
 
 main{
-  width: 1160px;
+  width: 1184px;
   height: 834px;
-  display:inline-block;
+  /* display:inline-block; */
+  position: absolute;
+  left: 150px;
+  top: 20px;
 }
 
 body{
   background-color: #FAFAFA;
 }
 
-.contenuto{
-  transform:scale(90%);
+/* .contenuto{
+  transform:scale(95%);
   transform-origin: 0;
   margin-top: 8px;
-  /* transform:translateY(4px); */
-}
+  transform:translateY(4px);
+} */
 
 .error{
   text-align: center;
