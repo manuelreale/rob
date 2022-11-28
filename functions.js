@@ -53,7 +53,7 @@ function hexToRGB(){
 function isCorrectStyle(val){
   let flag=0;
   for(let j=0; j<val.Style.length; j++){
-    if(val.Style[j]==stile){flag=1;}
+    if(stile.includes(val.Style[j])){flag=1;}
   }
   if (flag==1){return true}else{return false}
 }

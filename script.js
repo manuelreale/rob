@@ -448,7 +448,7 @@ function createSuggestions(){
 
   
   //showGarment(clothOfTheDay.Cloth_ID, clothOfTheDay.Layer)
-  showGarment(4, clothOfTheDay.Layer)
+  showGarment(clothOfTheDay.Cloth_ID, clothOfTheDay.Layer)
   phase++
   createOutfit()
   phase++
@@ -457,7 +457,7 @@ function createSuggestions(){
   createOutfit()
   //
 
-  console.log(idBlacklist)
+  //console.log(idBlacklist)
 }
 
 
