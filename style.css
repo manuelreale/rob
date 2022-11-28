@@ -554,7 +554,19 @@ button:hover {
 }
 
 .selezioneStile {
-  width: 550px;
+  width: 700px;
+  height: 600px;
+  display: inline-block;
+  justify-content: center;
+  vertical-align: bottom;
+  margin-bottom: 24px;
+  border-radius: 10px;
+  background-color: #fff;
+  margin-left: 16px;
+}
+
+.selectBtn {
+  width: 700px;
   height: 600px;
   display: inline-block;
   justify-content: center;
