@@ -73,6 +73,8 @@ h1 {
 
 body {
   background-color: #FAFAFA;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 /* .contenuto{
