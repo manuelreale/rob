@@ -23,6 +23,11 @@
   font-style: medium;
 }
 
+html{
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 #sideBar {
   /* width:134px; */
   height: 834px;
@@ -75,6 +80,8 @@ body {
   background-color: #FAFAFA;
   overflow-x: hidden;
   overflow-y: hidden;
+  margin: 0px;
+  padding: 0px;
 }
 
 /* .contenuto{
@@ -388,11 +395,6 @@ button:hover {
   width: 100vw;
   height: 100vh;
   display: none;
-}
-
-body {
-  margin: 0px;
-  padding: 0px;
 }
 
 

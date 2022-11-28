@@ -25,15 +25,20 @@
         <p>Start</p>
     </button>
 
-    <a href=".\index.html">
+    <!-- <a href=".\index.html"> -->
         <!-- <button id="startBtn" style="height:50px;" onclick="getRotation()"> -->
-            <p>Vestiti</p>
-        </a>
-</div>
-</div>
-<div id="logoSplash">
+            <!-- <p>Vestiti</p>
+        </a> -->
+
+<p style="color: white;"id="vestito1">vestito del giorno: nell'armadio</p>
+<p style="color: white;"id="vestito2">vestito 2: nell'armadio</p>
+<p style="color: white;"id="vestito3">vestito 3: nell'armadio</p>
+<p style="color: white;"id="vestito4">vestito 4: nell'armadio</p>
+
 
 </div>
+</div>
+
 </body>
 </html>
 
@@ -87,6 +92,31 @@
 document.addEventListener('keydown', (event)=> {    
     if(event.key=='p'){
         window.location.href = "./meteo.html";
+    }
+
+    if(event.key=='q'){
+       document.getElementById("vestito1").innerHTML="vestito del giorno: FUORIII"
+    }
+    if(event.key=='a'){
+       document.getElementById("vestito1").innerHTML="vestito del giorno: dentro"
+    }
+    if(event.key=='w'){
+       document.getElementById("vestito2").innerHTML="vestito 2: FUORIII"
+    }
+    if(event.key=='s'){
+       document.getElementById("vestito2").innerHTML="vestito 2: dentro"
+    }
+    if(event.key=='e'){
+       document.getElementById("vestito3").innerHTML="vestito 3: FUORIII"
+    }
+    if(event.key=='d'){
+       document.getElementById("vestito3").innerHTML="vestito 3: dentro"
+    }
+    if(event.key=='r'){
+       document.getElementById("vestito4").innerHTML="vestito 4: FUORIII"
+    }
+    if(event.key=='f'){
+       document.getElementById("vestito4").innerHTML="vestito 4: dentro"
     }
 })
 
