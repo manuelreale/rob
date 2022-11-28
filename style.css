@@ -96,7 +96,7 @@ p.error {
   font-size: 20px;
 }
 
-#card {
+.card {
   width: 20vw;
   height: auto;
   display: inline-block;
@@ -127,7 +127,7 @@ p.error {
   /* height: 645px; */
 }
 
-#card {
+.card {
   width: 468px;
   height: calc(541px/3);
   border: 0px solid #505050;
@@ -138,7 +138,7 @@ p.error {
 
 }
 
-#card h2 {
+.card h2 {
   font-family: 'TTFirsNeue';
   color: #212121;
   font-size: 20px;
@@ -156,7 +156,7 @@ p.error {
   text-overflow: ellipsis;
 }
 
-#card img {
+.card img {
   margin-top: 15px;
   margin-left: 15px;
   width: 150px;
@@ -194,7 +194,7 @@ p.error {
   text-overflow: ellipsis;
 }
 
-#card #infoLabel {
+.card #infoLabel {
   text-align: left;
   display: block;
   font-family: 'Inter';
@@ -207,7 +207,7 @@ p.error {
 }
 
 
-#card #info {
+.card #info {
   text-align: left;
   display: block;
   font-family: 'TTFirsNeue';
@@ -219,7 +219,7 @@ p.error {
   font-weight: 900;
 }
 
-#card #infoDiv {
+.card #infoDiv {
   display: inline-block;
   vertical-align: top;
   width: 280px;
@@ -457,4 +457,5 @@ body {
   position: absolute; 
   margin-top:80px; 
   margin-left:65px;
+  display: none;
 }

@@ -80,7 +80,8 @@ function showCloth(id, layer){
 
   
   const card = document.createElement("div");
-  card.id= 'card';
+  card.className= 'card';
+  card.id= id;
 
   const inUseLabel = document.createElement("p");
   inUseLabel.className= 'inUseLabel';
