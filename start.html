@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>start</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.min.js"></script>
+    <script src="sketch.js"></script>
+</head>
+<body style="width:1194px; height:834px">
+    <div id="blackScreen">
+    <div style="width: 300px; height:200px;
+    align-content: center;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;">
+    <button id="startBtn" style="height:50px;" onclick="schermoIntero();getRotation()">
+    <!-- <button id="startBtn" style="height:50px;" onclick="getRotation()"> -->
+        <p>Start</p>
+    </button>
+
+    <a href=".\index.html">
+        <!-- <button id="startBtn" style="height:50px;" onclick="getRotation()"> -->
+            <p>Vestiti</p>
+        </a>
+</div>
+</div>
+<div id="logoSplash">
+
+</div>
+</body>
+</html>
+
+
+
+<script>
+    var rotation = 0;
+
+//     function toggleFullScreen() {
+//   if (!document.fullscreenElement) {
+//     document.documentElement.requestFullscreen();
+//   } else if (document.exitFullscreen) {
+//     document.exitFullscreen();
+//   }
+// }
+    function getRotation(){
+    // let fs = fullscreen();
+    // fullscreen(!fs);
+
+    // toggleFullScreen();
+    DeviceMotionEvent.requestPermission().then(response => {
+        if (response == 'granted') {
+
+        // Add a listener to get smartphone acceleration
+            // in the XYZ axes (units in m/s^2)
+            window.addEventListener('devicemotion', (event) => {
+                // console.log(event);
+                rotation = Math.floor((event.rotationRate.alpha)*100)+Math.floor((event.rotationRate.beta)*100)+Math.floor((event.rotationRate.gamma)*100);
+                if (rotation >= 2000 || rotation <=-2000){
+                    
+                  document.getElementById("blackScreen").style.backgroundColor = "white";
+
+                  document.getElementById("startBtn").remove(); //remove button
+                //   document.getElementById("startLogo")
+                }
+                // else {
+                //   document.getElementById("blackScreen").style.backgroundColor = "#000";
+                // }
+            });
+       // Add a listener to get smartphone orientation
+           // in the alpha-beta-gamma axes (units in degrees)
+            window.addEventListener('deviceorientation',(event) => {
+                // console.log(event);
+            });
+        }
+    });
+}
+
+</script>
