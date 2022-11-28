@@ -62,7 +62,7 @@ h1 {
   display: inline;
 }
 
-main {
+.index {
   width: 1184px;
   height: 834px;
   /* display:inline-block; */
@@ -394,8 +394,6 @@ body {
   display: inline-block;
   vertical-align: bottom;
   margin-bottom: 24px;
-
-
 }
 
 .swiper-slide {
@@ -464,4 +462,14 @@ body {
   margin-top:200px; 
   margin-left:135px;
   display: none;
+}
+
+.meteoLato {
+  width: 360px;
+  height: 600px;
+  display: inline-block;
+  vertical-align: bottom;
+  margin-bottom: 24px;
+  border-radius: 10px;
+  background-color: #fff;
 }
