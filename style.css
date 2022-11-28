@@ -356,6 +356,14 @@ button {
 
 }
 
+.off{
+  background-color: white;
+  color: #C6C6C6;
+  pointer-events: none;
+}
+
+
+
 button:hover {
   background-color: black;
   color: white;
@@ -579,6 +587,25 @@ button:hover {
   width: 95%;
   /* box-sizing: border-box; */
 }
+
+.selectBtn-clicked {
+  border-radius: 100px;
+  background-color: white;
+  color: black;
+  font-size: 24px;
+  font-weight: 200;
+  text-align: left;
+  width: 185px;
+  height: 52px;
+  margin: 8px 16px;
+  /* padding-left: 16px; */
+  width: 95%;
+  /* box-sizing: border-box; */
+  background-color: black;
+  color: white;
+}
+
+
 
 .disabled {
   border-radius: 100px;

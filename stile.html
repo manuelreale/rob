@@ -163,25 +163,61 @@
         <p style="font-size:16px; font-weight:400; margin-top: 52px;">There is no outfit planned for today</p>
       </div>
       <div class="selezioneStile white" style="justify-content: center; position: relative;" id="2">
+
         <p style="font-size:36px; font-weight:500; margin-top: 24px;">What's the occasion today?</p>
-          <button class="selectBtn" style="display:block; margin-top:75px" onclick="">
-            <!--onclick active -->
+
+
+        <!--onclick active -->
+          <button class="selectBtn" style="display:block; margin-top:75px" onclick="
+
+          var messages = document.querySelectorAll('.selectBtn-clicked');
+          for (var i = 0; i < messages.length; i++) {messages[i].className='selectBtn';}
+          this.className='selectBtn-clicked';
+          document.getElementById('confirmBtn').classList.remove('off');
+          università()
+          ">
+
             <p style="margin-left:32px; text-align:left;">University</p>
           </button>
-          <button class="selectBtn" style="display:block" onclick="">
-            <!--onclick active -->
+
+
+          <!--onclick active -->
+          <button class="selectBtn" style="display:block" onclick="
+
+          var messages = document.querySelectorAll('.selectBtn-clicked');
+          for (var i = 0; i < messages.length; i++) {messages[i].className='selectBtn';}
+          this.className='selectBtn-clicked';
+          document.getElementById('confirmBtn').classList.remove('off');
+          elegante()
+          ">
+
             <p style="margin-left:32px; text-align:left;">Formal</p>
           </button>
-          <button class="selectBtn" style="display:block;" onclick="">
-            <!--onclick active -->
+
+
+          <!--onclick active -->
+          <button class="selectBtn" style="display:block;" onclick="
+
+          var messages = document.querySelectorAll('.selectBtn-clicked');
+          for (var i = 0; i < messages.length; i++) {messages[i].className='selectBtn';}
+          this.className='selectBtn-clicked'
+          document.getElementById('confirmBtn').classList.remove('off');
+          casual();
+          ;">
+
             <p style="margin-left:32px; text-align:left;">Casual</p>
           </button>
+
+
+          
+
           <button class="disabled" style="display:block; position: absolute; bottom:96px; margin-bottom:16px" onclick="">
             <!--onclick active -->
             <p style="margin-left:32px; text-align:left;">+ Add new category</p>
           </button>
-          <button class="rounded" style="height: 48px; display: block; margin: 16px; position: absolute; bottom:24px; right:0px"
-            onclick="">
+
+          <button class="rounded off" id="confirmBtn" style="width: 185px;height: 48px; display: block; margin: 16px; position: absolute; bottom:24px; right:0px"
+            onclick="window.location.href = './index.html'">
             <!--onclick active -->
             <p style="font-size:24px;">confirm</p>
           </button>
@@ -198,3 +234,13 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script type="text/javascript" src="functions.js"></script>
 <script type="text/javascript" src="script-meteo.js"></script>
+
+<script>
+
+function casual(){ localStorage.setItem("stile", JSON.stringify(["Casual", "Comfy"])) }
+
+function università(){ localStorage.setItem("stile", JSON.stringify(["Ufficio", "Vintage"])) }
+
+function elegante(){localStorage.setItem("stile", JSON.stringify(["Elegante", "Cerimonia", "Glamour","Ufficio"])) }
+
+</script>

@@ -81,7 +81,7 @@ function showCloth(id, layer){
   
   const card = document.createElement("div");
   card.className= 'card';
-  card.id= id;
+  //card.id= id;
 
   const inUseLabel = document.createElement("p");
   inUseLabel.className= 'inUseLabel';
@@ -161,7 +161,7 @@ function showGarment(id, layer){
   
   const card = document.createElement("div");
   card.className= 'garmentOfTheDayCard';
-  card.id= id;
+  //card.id= id;
 
   const inUseLabel = document.createElement("p");
   inUseLabel.className= 'inUseLabel2';
@@ -321,7 +321,7 @@ function showGarment(id, layer){
 function findClothOfTheDay(){
   let flag=0;
   for(let i=0; i<armadio.length && flag==0; i++){
-    if(armadio[i].Layer != 5 && armadio[i].Layer != 6){
+    if(armadio[i].Layer != 5 && armadio[i].Layer != 6 && armadio[i].Layer != 0 && armadio[i].Layer != 1){
       flag=1;
       clothOfTheDay=armadio[i];
     }
@@ -438,7 +438,7 @@ flag=0;
 }
 
 function createSuggestions(){
-  //armadio = armadio.filter(isCorrectStyle)
+  armadio = armadio.filter(isCorrectStyle)
   armadio = armadio.filter(isCorrectWeight)
   armadio.sort(sortUtilizzi);
 
@@ -479,10 +479,10 @@ function createSuggestions(){
 
 
 
-function casual(){stile = ["Casual", "Comfy"]; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
-function università(){stile = ["Ufficio", "Vintage"]; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
-function elegante(){stile = ["Elegante", "Cerimonia", "Glamour","Ufficio"]; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
-function sport(){stile = ["Sport"]; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
+// function casual(){stile = ["Casual", "Comfy"]; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
+// function università(){stile = ["Ufficio", "Vintage"]; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
+// function elegante(){stile = ["Elegante", "Cerimonia", "Glamour","Ufficio"]; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
+// function sport(){stile = ["Sport"]; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
 
 // function removeCards(){
 //   var paras = document.getElementsByClassName('hi');

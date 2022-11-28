@@ -7,12 +7,12 @@
     <title>vestiti</title>
   </head>
   <body id="body">
-<div id="setupOpen" style='z-index: 10'>
+<!-- <div id="setupOpen" style='z-index: 10'>
   <button onclick="casual()">Casual</button>
   <button onclick="università()">Univeristy</button>
   <button onclick="elegante()">Formal</button>
   <button onclick="sport()">Sport</button>
-</div>
+</div> -->
 
 <div id="sideBar"> <!-- DIV NUMERO 1 SIDEBAR -->
   <div id="logo">
@@ -132,3 +132,22 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script type="text/javascript" src="functions.js"></script>
 <script type="text/javascript" src="script.js"></script>
+<script>
+
+  fetch('./armadio.json')
+.then(response => {
+  return response.json();
+})
+.then(jsondata => {
+  armadio = jsondata;
+  hexToRGB()
+  stile = JSON.parse(localStorage.getItem("stile"));
+  console.log(stile)
+  localStorage.removeItem("stile");
+
+  createSuggestions()
+
+});
+
+  
+</script>
