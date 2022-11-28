@@ -497,6 +497,7 @@ body {
   background-color: #1E1E1E;
   z-index: 1;
   overflow: hidden;
+  pointer-events: none;
 
   /* animation: disappearing 0.5s ease-in forwards 2.5s; */
 }
@@ -517,6 +518,7 @@ body {
   width:100%;
   background-color: white;
   opacity: 0%;
+  pointer-events: none;
   /* animation: logoOpacity 1s ease-in forwards 1s, disappearing 0.5s ease-in forwards 4s; */
 }
 
@@ -528,6 +530,7 @@ body {
   border-radius: 50%;
   display: inline-block;
   opacity: 0%;
+  pointer-events: none;
 
   /* animation: scaleCircle 1.5s ease-in forwards 0s; */
 }
