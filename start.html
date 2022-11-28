@@ -65,7 +65,7 @@
                 if (rotation >= 2000 || rotation <=-2000){
                     
                   //document.getElementById("blackScreen").style.backgroundColor = "white";
-                  window.location.href = "./work";
+                  window.location.href = "./work.html";
 
                   document.getElementById("startBtn").remove(); //remove button
                 //   document.getElementById("startLogo")
@@ -82,5 +82,12 @@
         }
     });
 }
+
+
+document.addEventListener('keydown', (event)=> {    
+    if(event.key=='p'){
+        window.location.href = "./work.html";
+    }
+})
 
 </script>
