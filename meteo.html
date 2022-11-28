@@ -358,8 +358,13 @@
 
 <script>
 
+document.getElementById("dot").style.animation = "scaleCircle 1.5s ease-in forwards 0s"
+      document.getElementById("black").style.animation = "disappearing 0.5s ease-in forwards 2.5s"
+      document.getElementById("logoAnimation").style.animation = "logoOpacity 1s ease-in forwards 1s, disappearing 0.5s ease-in forwards 4s"
+      document.getElementById("logoSvg").style.animation = 'disappearing 0.5s ease-in forwards 3s' 
+
   document.addEventListener('keydown', (event)=> {    
-    if(event.key=='a'){
+    if(event.key=='/'){
       document.getElementById("dot").style.animation = "scaleCircle 1.5s ease-in forwards 0s"
       document.getElementById("black").style.animation = "disappearing 0.5s ease-in forwards 2.5s"
       document.getElementById("logoAnimation").style.animation = "logoOpacity 1s ease-in forwards 1s, disappearing 0.5s ease-in forwards 4s"
