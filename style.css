@@ -72,8 +72,9 @@ body{
 
 .contenuto{
   transform:scale(90%);
-  transform-origin: 0px;
-  transform:translateY(4px);
+  transform-origin: 0;
+  margin-top: 8px;
+  /* transform:translateY(4px); */
 }
 
 .error{
