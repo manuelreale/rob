@@ -452,3 +452,9 @@ body {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
+
+.inUseLabel{
+  position: absolute; 
+  margin-top:80px; 
+  margin-left:65px;
+}

@@ -86,7 +86,7 @@ function showCloth(id, layer){
   inUseLabel.className= 'inUseLabel';
   inUseLabel.innerHTML= 'In Use';
   card.appendChild(inUseLabel);
-  inUseLabel.style='position: absolute; margin-top:80px; margin-left:65px;'
+  
 
   const thumbnail = document.createElement("img");
   thumbnail.src = armadio[id].Image
