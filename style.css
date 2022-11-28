@@ -474,6 +474,7 @@ body {
   width: 360px;
   height: 600px;
   display: inline-block;
+  justify-content: center;
   vertical-align: bottom;
   margin-bottom: 24px;
   border-radius: 10px;
