@@ -7,13 +7,13 @@
 @font-face {
   font-family: 'TTFirsNeue';
   src: url(./fonts/TTFirsNeue-Regular.ttf);
-  font-weight:lighter;
+  font-weight: lighter;
 }
 
 @font-face {
   font-family: 'TTFirsNeue';
   src: url(./fonts/TTFirsNeue-DemiBold.ttf);
-  font-weight:900;
+  font-weight: 900;
 }
 
 @font-face {
@@ -23,46 +23,46 @@
   font-style: medium;
 }
 
-#sideBar{
+#sideBar {
   /* width:134px; */
-  height:834px;
-  float:left;
+  height: 834px;
+  float: left;
   /* display:inline-block; */
   background-color: #ffffff;
   position: relative;
   /* vertical-align:top; */
 }
 
-#logo{
-  margin:0px;
-  height:87px;
-  background-color: #FAFAFA ;
-  padding-left:20px;
-  padding-top:22px;
+#logo {
+  margin: 0px;
+  height: 87px;
+  background-color: #FAFAFA;
+  padding-left: 20px;
+  padding-top: 22px;
 }
 
-#logoFont{
+#logoFont {
   font-size: 48px;
   font-weight: 700;
   margin-left: 0px;
   margin-top: 0px;
 }
 
-h1{
+h1 {
   font-family: 'TTFirsNeue';
   color: #212121;
   font-size: 52px;
   font-weight: 900;
-  
-  text-align:left;
-  vertical-align:top;
+
+  text-align: left;
+  vertical-align: top;
   margin: 0px;
   margin-top: 20px;
   margin-left: 36px;
   display: inline;
 }
 
-main{
+main {
   width: 1184px;
   height: 834px;
   /* display:inline-block; */
@@ -71,7 +71,7 @@ main{
   top: 20px;
 }
 
-body{
+body {
   background-color: #FAFAFA;
 }
 
@@ -82,21 +82,21 @@ body{
   transform:translateY(4px);
 } */
 
-.error{
+.error {
   text-align: center;
 }
 
-div.error{
+div.error {
   margin-top: 10vh;
   margin-bottom: 10vh;
 }
 
-p.error{
+p.error {
   font-weight: normal;
   font-size: 20px;
 }
 
-#card{
+#card {
   width: 20vw;
   height: auto;
   display: inline-block;
@@ -110,8 +110,8 @@ p.error{
   font-weight: lighter;
 }
 
-#garmentOfTheDayCard{
-  vertical-align:bottom;
+#garmentOfTheDayCard {
+  vertical-align: bottom;
   width: 320px;
   height: auto;
   display: inline-block;
@@ -127,26 +127,26 @@ p.error{
   /* height: 645px; */
 }
 
-#card{
-  width:468px;
-  height:calc(541px/3);
+#card {
+  width: 468px;
+  height: calc(541px/3);
   border: 0px solid #505050;
   border-bottom: 1px solid #505050;
   text-align: left;
   margin: 0px;
   padding: 0px;
-  
+
 }
 
-#card h2{
+#card h2 {
   font-family: 'TTFirsNeue';
   color: #212121;
   font-size: 20px;
   font-weight: 900;
-  width:260px;
-  
-  text-align:left;
-  vertical-align:top;
+  width: 260px;
+
+  text-align: left;
+  vertical-align: top;
   margin-left: 0px;
   margin-top: 15px;
   margin-bottom: 25px;
@@ -156,7 +156,7 @@ p.error{
   text-overflow: ellipsis;
 }
 
-#card img{
+#card img {
   margin-top: 15px;
   margin-left: 15px;
   width: 150px;
@@ -167,25 +167,25 @@ p.error{
   border-radius: 20px;
 }
 
-#infoLabel{
-  text-align: left; 
+#infoLabel {
+  text-align: left;
   display: inline-block;
   font-family: 'Inter';
   font-style: italic;
   font-size: 14px;
   color: #878787;
-  width:150px;
+  width: 150px;
   margin: 0;
 }
 
-#info{
-  text-align: left; 
+#info {
+  text-align: left;
   display: inline-block;
   font-family: 'TTFirsNeue';
   font-size: 16px;
   font-weight: 900;
   color: #212121;
-  width:200px;
+  width: 200px;
   margin: 0;
   margin-bottom: 8px;
 
@@ -194,91 +194,91 @@ p.error{
   text-overflow: ellipsis;
 }
 
-#card #infoLabel{
-  text-align: left; 
+#card #infoLabel {
+  text-align: left;
   display: block;
   font-family: 'Inter';
   font-style: italic;
   font-size: 12px;
   color: #878787;
-  width:200px;
+  width: 200px;
   margin: 0;
   margin-bottom: 4px;
 }
 
 
-#card #info{
-  text-align: left; 
+#card #info {
+  text-align: left;
   display: block;
   font-family: 'TTFirsNeue';
   font-size: 12px;
   color: #212121;
-  width:200px;
+  width: 200px;
   margin: 0;
   margin-bottom: 12px;
   font-weight: 900;
 }
 
-#card #infoDiv{
+#card #infoDiv {
   display: inline-block;
-  vertical-align:top;
-  width:280px;
+  vertical-align: top;
+  width: 280px;
   margin-left: 20px;
 }
 
 /* garemnt of the day */
-#garmentOfTheDayCard h3{
+#garmentOfTheDayCard h3 {
   font-family: 'TTFirsNeue';
   color: #212121;
   font-size: 18px;
-  margin-top:0;
+  margin-top: 0;
   margin-right: 8px;
-  top:0px;
+  top: 0px;
   display: inline-block;
 }
 
-#infoCircle{
-  display:inline-block;
+#infoCircle {
+  display: inline-block;
   margin-top: -32px;
   transform: translateY(10px);
 }
 
-#garmentOfTheDayCard h2{
+#garmentOfTheDayCard h2 {
   font-family: 'TTFirsNeue';
   color: #212121;
   font-size: 32px;
   font-weight: 900;
-  width:220px;
-  height:82px;
+  width: 220px;
+  height: 82px;
   margin-top: 0;
-  display:-webkit-box;
+  display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   vertical-align: middle;
-  
+
 }
 
-#thumbnailDiv{
-  margin:-20px;
+#thumbnailDiv {
+  margin: -20px;
   padding: 20px;
   border-radius: 10px;
-  margin-bottom:8px;
+  margin-bottom: 8px;
   width: 320px;
   height: 368px;
   align-content: center;
   position: relative;
 }
 
-#labelDiv{
+#labelDiv {
   display: inline-block;
   width: 50%;
-  margin-bottom:4px;
+  margin-bottom: 4px;
 }
 
 
 
-#GOTDthumbnail{
+#GOTDthumbnail {
   margin-top: 10px;
   width: 318px;
   height: 318px;
@@ -287,30 +287,30 @@ p.error{
   border-radius: 24px;
 }
 
-#titolo{
+#titolo {
   font-family: "TT Firs Neue", sans-serif;
   text-align: center;
   font-weight: bolder;
   padding: 1vw;
   margin: 1vw;
   width: 20vw;
-  height:20px;
+  height: 20px;
 }
 
-#tag{
+#tag {
   height: 23px;
   border-radius: 37px;
   font-family: 'TTFirsNeue';
-  font-weight:lighter;
+  font-weight: lighter;
   display: inline-block;
-  padding-top:2px;
-  padding-left:10px;
-  padding-right:10px;
-  color:white;
-  margin-right:10px;
+  padding-top: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  margin-right: 10px;
 }
 
-p{
+p {
   font-family: "TT Firs Neue", sans-serif;
   text-align: center;
   font-weight: bolder;
@@ -318,7 +318,7 @@ p{
   margin: 4px;
 }
 
-button{
+button {
   font-family: "TT Firs Neue", sans-serif;
   background-color: white;
   border-radius: 8px;
@@ -333,19 +333,20 @@ button{
   border-radius: 100px;
   background-color: black;
   color: white;
-  font-size:xx-large;
+  font-size: xx-large;
   font-weight: 200;
   width: 185px;
   height: 52px;
   margin: 0px;
+
 }
 
-button:hover{
+button:hover {
   background-color: black;
   color: white;
 }
 
-#thumbnail{
+#thumbnail {
   width: 100%;
   /* height: 200px; */
   object-fit: contain;
@@ -356,32 +357,32 @@ button:hover{
   white-space: pre-wrap;
 }
 
-.container{
-  display:inline-block;
+.container {
+  display: inline-block;
   /* margin: 2vw; */
   /*padding: 0px; */
   /* margin: 0px;
   margin-right: -5px; */
   /* top:0px; */
-/* border: 1px solid black; */
+  /* border: 1px solid black; */
 }
 
-#setupOpen{
+#setupOpen {
   position: absolute;
   background-color: white;
-width: 100vw;
-height: 100vh;
+  width: 100vw;
+  height: 100vh;
 }
 
-#setupClose{
+#setupClose {
   position: absolute;
   background-color: white;
-width: 100vw;
-height: 100vh;
-display: none;
+  width: 100vw;
+  height: 100vh;
+  display: none;
 }
 
-body{
+body {
   margin: 0px;
   padding: 0px;
 }
@@ -392,9 +393,9 @@ body{
   height: 539px;
   display: inline-block;
   vertical-align: bottom;
-  margin-bottom:24px;
-  
-  
+  margin-bottom: 24px;
+
+
 }
 
 .swiper-slide {
@@ -402,13 +403,13 @@ body{
   color: #fff;
 }
 
-.white{
+.white {
   background-color: white;
   color: black;
   border: 1px solid black;
 }
 
-.meteo{
+.meteo {
   width: 596px;
   height: 94px;
   float: left;
@@ -421,15 +422,15 @@ body{
   height: 108px;
 }
 
-#name{
+#name {
   margin-bottom: 8px;
 }
 
-#blackScreen{
+#blackScreen {
   background-color: #1e1e1e;
   width: 100vw;
   height: 100vh;
-  z-index:10;
+  z-index: 10;
 }
 
 .calendar {
@@ -438,10 +439,16 @@ body{
 
 .swiperCal {
   width: 773px;
-  height: 645px;
+  height: 600px;
   display: inline-block;
   vertical-align: bottom;
-  margin-bottom:24px;
-  
-  
+  margin-bottom: 24px;
+}
+
+.centra-orizzontale {
+  position: absolute;
+  margin: 0;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
