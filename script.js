@@ -469,14 +469,10 @@ function createSuggestions(){
 
 
 
-function elegante(){stile = "Elegante"; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
-function ufficio(){stile = "Ufficio"; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
-function casual(){stile = "Casual"; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
-function glamour(){stile = "Glamour"; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
-function comfy(){stile = "Comfy"; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
-function vintage(){stile = "Vintage"; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
-function sport(){stile = "Sport"; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
-function cerimonia(){stile = "Cerimonia"; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
+function casual(){stile = ["Casual", "Comfy"]; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
+function università(){stile = ["Ufficio", "Vintage"]; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
+function elegante(){stile = ["Elegante", "Cerimonia", "Glamour","Ufficio"]; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
+function sport(){stile = ["Sport"]; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
 
 // function removeCards(){
 //   var paras = document.getElementsByClassName('hi');
