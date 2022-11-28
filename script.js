@@ -164,7 +164,7 @@ function showGarment(id, layer){
   card.id= id;
 
   const inUseLabel = document.createElement("p");
-  inUseLabel.className= 'inUseLabel';
+  inUseLabel.className= 'inUseLabel2';
   inUseLabel.innerHTML= 'In Use';
   card.appendChild(inUseLabel);
 
@@ -508,20 +508,35 @@ document.addEventListener('keydown', (event)=> {
   }
 
   if(event.key=='q'){
-    
+
+    document.getElementById("0").querySelector(".inUseLabel2").style = 'display: inline; opacity: 100%;'
     document.getElementById("0").querySelector('#thumbnailDiv').style.opacity = "20%";
     document.getElementById("0").querySelector('#name').style.opacity = "20%";
     document.getElementById("0").querySelector('#labelDiv').style.opacity = "20%";
     document.getElementById("0").querySelector('#labelDiv2').style.opacity = "20%";
+    document.getElementById("0").querySelector('#tag1').style.opacity = "20%";
+    if(document.getElementById("0").querySelector('#tag2')){
+      document.getElementById("0").querySelector('#tag2').style.opacity = "20%";
+    }
+    if(document.getElementById("0").querySelector('#tag3')){
+      document.getElementById("0").querySelector('#tag3').style.opacity = "20%";
+    }
     
   }
   if(event.key=='a'){
     
-
+    document.getElementById("0").querySelector(".inUseLabel2").style = 'display: none; opacity: 100%;'
     document.getElementById("0").querySelector('#thumbnailDiv').style.opacity = "100%";
     document.getElementById("0").querySelector('#name').style.opacity = "100%";
     document.getElementById("0").querySelector('#labelDiv').style.opacity = "100%";
     document.getElementById("0").querySelector('#labelDiv2').style.opacity = "100%";
+    document.getElementById("0").querySelector('#tag1').style.opacity = "100%";
+    if(document.getElementById("0").querySelector('#tag2')){
+      document.getElementById("0").querySelector('#tag2').style.opacity = "100%";
+    }
+    if(document.getElementById("0").querySelector('#tag3')){
+      document.getElementById("0").querySelector('#tag3').style.opacity = "100%";
+    }
 
   }
 
