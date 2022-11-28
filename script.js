@@ -353,80 +353,44 @@ function rankColorCompatibility(group){
 
 
 function createOutfit(){
-let dice = 0;
-
-dice = Math.floor(Math.random()*4)
-
-if(armadio1.length-armadio1Bl<=0){ dice=1; } // if there are no vestiti interi mette il dice a 1
-
-if(dice<3 || clothOfTheDay.Layer!=1 || (clothOfTheDay.Layer==2 || clothOfTheDay.Layer==3 || clothOfTheDay.Layer==4)){
-
-  if(armadio0.length-armadio0Bl>0 && clothOfTheDay.Layer!=0){showAvailableCloth(armadio0)} //show lower if its not the clothoftheday and if there are available
-
-  dice = Math.floor(Math.random()*2)
-  if(armadio2.length -armadio2Bl<=0){dice==1} //if there are no Layer 2 show Layer 3
-  if(armadio3.length -armadio3Bl<=0){dice==0}
-  if((armadio3.length -armadio3Bl<=0 && armadio2.length -armadio2Bl<=0) || clothOfTheDay.Layer==3 || clothOfTheDay.Layer==2){dice=3;} //if there is nothing shown nothing
-  console.log(dice+ ', '+ phase +' 2and3')
-  if(dice==0){
-    showAvailableCloth(armadio2)
+  let dice = 0;
+  
+  if(clothOfTheDay.Layer!=0){
+  
+    if(armadio0.length-armadio0Bl>0 && clothOfTheDay.Layer!=0){showAvailableCloth(armadio0)} //show lower if its not the clothoftheday and if there are available
+  
+    if(armadio2.length - armadio2Bl>0 && clothOfTheDay.Layer!=2){showAvailableCloth(armadio2)}
+    else if(armadio3.length - armadio3Bl>0 && clothOfTheDay.Layer!=3){showAvailableCloth(armadio3)}
+    else{console.log('mancano vestiti 2 e 3')}
+  
+    if(armadio4.length - armadio4Bl>0 && clothOfTheDay.Layer!=4){showAvailableCloth(armadio4)}
+    else if(armadio5.length - armadio5Bl>0 && clothOfTheDay.Layer!=5){showAvailableCloth(armadio5)}
+    else if(armadio6.length - armadio6Bl>0 && clothOfTheDay.Layer!=6){showAvailableCloth(armadio6)}
+    else{
+      console.log('mancano vestiti 4 e 5 e 6 riprovo 2 e 3')
+  
+      if(armadio2.length - armadio2Bl>0 && clothOfTheDay.Layer!=2){showAvailableCloth(armadio2)}
+      else if(armadio3.length - armadio3Bl>0 && clothOfTheDay.Layer!=3){showAvailableCloth(armadio3)}
+      else{console.log('mancano vestiti 2 e 3')}
+  
+    }
+  
+  
+  } else{
+  
+    if(armadio2.length - armadio2Bl>0 && clothOfTheDay.Layer!=2){showAvailableCloth(armadio2)}
+    else if(armadio3.length - armadio3Bl>0 && clothOfTheDay.Layer!=3){showAvailableCloth(armadio3)}
+    else{console.log('mancano vestiti 2 e 3')}
+  
+    if(armadio4.length - armadio4Bl>0 && clothOfTheDay.Layer!=4){showAvailableCloth(armadio4)}else{console.log('mancano vestiti 4')}
+    if(armadio5.length - armadio5Bl>0 && clothOfTheDay.Layer!=5){showAvailableCloth(armadio5)}else{console.log('mancano vestiti 5')}
+  
+  
+    if(armadio6.length - armadio6Bl>0 && clothOfTheDay.Layer!=6){showAvailableCloth(armadio6)}
+    else{console.log('mancano vestiti 6')}
   }
-  if(dice==1){
-    showAvailableCloth(armadio3)
+  
   }
-
-
-  dice = Math.floor(Math.random()*2)
-  if(armadio4.length-armadio4Bl<=0){dice==1}
-  if(armadio5.length-armadio5Bl<=0){dice==0}
-  if((armadio5.length-armadio5Bl<=0 && armadio4.length-armadio4Bl<=0) || clothOfTheDay.Layer==4){dice=3;}
-  console.log(dice+ ', '+ phase + ' 4and5')
-  if(dice==0){
-    showAvailableCloth(armadio4)
-  }
-  if(dice==1){
-    showAvailableCloth(armadio5)
-  }
-
-
-  dice = Math.floor(Math.random()*2)
-  if(armadio6.length-armadio6Bl<=0){dice==1}
-  console.log(dice+ ', '+ phase+ ' 6')
-  if(dice==0){
-    showAvailableCloth(armadio6)
-  }
-  if(dice==1){
-  }
-
-}else{
-
-  if(clothOfTheDay.Layer!=1){showAvailableCloth(armadio1)}
-
-  dice = Math.floor(Math.random()*2)
-  if(armadio5.length-armadio5Bl<=0){dice==1}
-  if(armadio6.length-armadio6Bl<=0){dice==0}
-
-  if(armadio6.length-armadio6Bl<=0 && armadio5.length-armadio5Bl<=0){dice=3;}
-
-  if(dice==0){
-    showAvailableCloth(armadio5)
-  }
-  if(dice==1){
-    showAvailableCloth(armadio6)
-  }
-
-
-}
-
-console.log(armadio0Bl)
-console.log(armadio1Bl)
-console.log(armadio2Bl)
-console.log(armadio3Bl)
-console.log(armadio4Bl)
-console.log(armadio5Bl)
-console.log(armadio6Bl)
-
-}
 
 function isNotBlacklisted(id){
 let flag =0;
