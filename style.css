@@ -504,7 +504,7 @@ body {
   /* animation: disappearing 0.5s ease-in forwards 2.5s; */
 }
 
-#logo{
+#logoAnimation{
   -webkit-box-sizing: border-box;
   
   display: flex;

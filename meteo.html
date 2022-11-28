@@ -13,7 +13,7 @@
   <div id="black">
     <span id="dot"></span>
 </div>
-<div id="logo">
+<div id="logoAnimation">
     <img src=".\svg\logo.svg" height="250" width="250"  id="logoSvg" style="display: inline;">
 </div>
 
@@ -362,7 +362,7 @@
     if(event.key=='a'){
       document.getElementById("dot").style.animation = "scaleCircle 1.5s ease-in forwards 0s"
       document.getElementById("black").style.animation = "disappearing 0.5s ease-in forwards 2.5s"
-      document.getElementById("logo").style.animation = "logoOpacity 1s ease-in forwards 1s, disappearing 0.5s ease-in forwards 4s"
+      document.getElementById("logoAnimation").style.animation = "logoOpacity 1s ease-in forwards 1s, disappearing 0.5s ease-in forwards 4s"
       document.getElementById("logoSvg").style.animation = 'disappearing 0.5s ease-in forwards 3s' 
     }
   
