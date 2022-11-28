@@ -29,6 +29,7 @@
   float:left;
   /* display:inline-block; */
   background-color: #ffffff;
+  position: relative;
   /* vertical-align:top; */
 }
 
