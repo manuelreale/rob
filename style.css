@@ -297,7 +297,7 @@ p.error {
   height: 20px;
 }
 
-#tag {
+.tag {
   height: 23px;
   border-radius: 37px;
   font-family: 'TTFirsNeue';

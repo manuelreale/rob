@@ -163,6 +163,11 @@ function showGarment(id, layer){
   card.className= 'garmentOfTheDayCard';
   card.id= id;
 
+  const inUseLabel = document.createElement("p");
+  inUseLabel.className= 'inUseLabel';
+  inUseLabel.innerHTML= 'In Use';
+  card.appendChild(inUseLabel);
+
   const thumbnailDiv = document.createElement("div");
   thumbnailDiv.id= 'thumbnailDiv';
   if(armadio[id].Color_code[0] == 255 && armadio[id].Color_code[1] == 255 && armadio[id].Color_code[2] == 255){
@@ -238,7 +243,7 @@ function showGarment(id, layer){
 
 
   const labelDiv2 = document.createElement("div");
-  labelDiv2.id= 'labelDiv';
+  labelDiv2.id= 'labelDiv2';
 
   const lastUseLabel = document.createElement("p");
   lastUseLabel.id= 'infoLabel';
@@ -263,7 +268,8 @@ function showGarment(id, layer){
   card.appendChild(labelDiv2);
 
   const tag1 = document.createElement("div");
-  tag1.id= 'tag';
+  tag1.className= 'tag';
+  tag1.id= 'tag1';
   tag1.innerHTML = armadio[id].Style[0]
   if(armadio[id].Color_code[0] == 255 && armadio[id].Color_code[1] == 255 && armadio[id].Color_code[2] == 255){
     tag1.style.backgroundColor = 'rgb(150,150,150, 1)'
@@ -276,7 +282,8 @@ function showGarment(id, layer){
   if(armadio[id].Style[1]){
 
     const tag2 = document.createElement("div");
-    tag2.id= 'tag';
+    tag2.className= 'tag';
+    tag2.id= 'tag2';
     tag2.innerHTML = armadio[id].Style[1]
     if(armadio[id].Color_code[0] == 255 && armadio[id].Color_code[1] == 255 && armadio[id].Color_code[2] == 255){
       tag2.style.backgroundColor = 'rgb(150,150,150, 1)'
@@ -290,7 +297,8 @@ function showGarment(id, layer){
   if(armadio[id].Style[2]){
 
     const tag3 = document.createElement("div");
-    tag3.id= 'tag';
+    tag3.className= 'tag';
+    tag3.id= 'tag3';
     tag3.innerHTML = armadio[id].Style[2]
     if(armadio[id].Color_code[0] == 255 && armadio[id].Color_code[1] == 255 && armadio[id].Color_code[2] == 255){
       tag3.style.backgroundColor = 'rgb(150,150,150, 1)'
@@ -497,6 +505,24 @@ document.addEventListener('keydown', (event)=> {
     document.getElementById("34").querySelector(".inUseLabel").style = 'display: none; opacity: 100%;'
     document.getElementById("34").querySelector("#infoDiv").style.opacity = "100%";
     document.getElementById("34").querySelector("#imgOutfit").style.opacity = "100%";
+  }
+
+  if(event.key=='q'){
+    
+    document.getElementById("0").querySelector('#thumbnailDiv').style.opacity = "20%";
+    document.getElementById("0").querySelector('#name').style.opacity = "20%";
+    document.getElementById("0").querySelector('#labelDiv').style.opacity = "20%";
+    document.getElementById("0").querySelector('#labelDiv2').style.opacity = "20%";
+    
+  }
+  if(event.key=='a'){
+    
+
+    document.getElementById("0").querySelector('#thumbnailDiv').style.opacity = "100%";
+    document.getElementById("0").querySelector('#name').style.opacity = "100%";
+    document.getElementById("0").querySelector('#labelDiv').style.opacity = "100%";
+    document.getElementById("0").querySelector('#labelDiv2').style.opacity = "100%";
+
   }
 
 });
