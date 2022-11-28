@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+
+    <title>capo</title>
+  </head>
+  <body id="body">
+
+<div id="sideBar"> <!-- DIV NUMERO 1 SIDEBAR -->
+  <div id="logo">
+    <h1 id="logoFont">Rob</h1>
+  </div>
+  <div id="tab"><img src=".\imgs\wardrobe.svg"></div>
+  <div id="tab"><img src=".\imgs\insights.svg"></div>
+  <div id="tab" style="position:absolute; bottom:0px;"><img src=".\imgs\settings.svg"></div>
+</div>
+<main class="index">
+<div class="titoloDiv" style="display:inline;"><h1>Garment’s details</h1></div> <!-- DIV NUMERO 2 TITOLO -->
+<div class="contenuto">
+<div class='container ' id="1" style="float:left;"></div> <!-- DIV NUMERO 3 CAPO DEL GIORNO-->
+</div>
+</main>
+
+
+  </body>
+</html>
+
+<!-- <script type="text/javascript" src="csvjson.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="functions.js"></script>
+<script type="text/javascript" src="script.js"></script>
+<script>
+
+fetch('./armadio.json')
+.then(response => {
+  return response.json();
+})
+.then(jsondata => {
+  armadio = jsondata;
+  hexToRGB()
+
+  findClothOfTheDay()
+  //armadio = armadio.filter(isColorCompatible)
+  rankColorCompatibility(armadio)
+
+  armadio0 = armadio.filter(isLayer0)
+  armadio1 = armadio.filter(isLayer1)
+  armadio2 = armadio.filter(isLayer2)
+  armadio3 = armadio.filter(isLayer3)
+  armadio4 = armadio.filter(isLayer4)
+  armadio5 = armadio.filter(isLayer5)
+  armadio6 = armadio.filter(isLayer6)
+
+  armadio0.sort(sortColorCompatibility);
+  armadio1.sort(sortColorCompatibility);
+  armadio2.sort(sortColorCompatibility);
+  armadio3.sort(sortColorCompatibility);
+  armadio4.sort(sortColorCompatibility);
+  armadio5.sort(sortColorCompatibility);
+  armadio6.sort(sortColorCompatibility);
+
+  showGarment(clothOfTheDay.Cloth_ID, clothOfTheDay.Layer)
+
+});
+
+    
+</script>
