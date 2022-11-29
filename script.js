@@ -577,6 +577,193 @@ localStorage.setItem("capo", capo);
 window.location.href = './capo.html'
 }
 
+function showSingleGarment(id, layer){
+  idBlacklist.push(id)
+  if(layer==0){armadio0Bl++}
+  if(layer==1){armadio1Bl++}
+  if(layer==2){armadio2Bl++}
+  if(layer==3){armadio3Bl++}
+  if(layer==4){armadio4Bl++}
+  if(layer==5){armadio5Bl++}
+  if(layer==6){armadio6Bl++}
+  
+
+  let stop=0;
+  for(let j=0; j<armadio.length && stop==0; j++){
+    if(armadio[j].Cloth_ID==id){
+      id=j;
+      stop = 1;
+    }
+  }
+  
+  const card = document.createElement("div");
+  card.className= 'garmentOfTheDayCard';
+  card.id= phase+''+armadio[id].Cloth_ID;
+  card.onclick = function(){viewCloth(this)}
+
+  const inUseLabel = document.createElement("p");
+  inUseLabel.className= 'inUseLabel2';
+  inUseLabel.innerHTML= 'In Use';
+  card.appendChild(inUseLabel);
+
+  const thumbnailDiv = document.createElement("div");
+  thumbnailDiv.id= 'thumbnailDiv';
+  thumbnailDiv.style.height='390px';
+  if(armadio[id].Color_code[0] == 255 && armadio[id].Color_code[1] == 255 && armadio[id].Color_code[2] == 255){
+    thumbnailDiv.style.backgroundColor = 'rgb(150,150,150, 0.1)'
+  }else{
+    thumbnailDiv.style.backgroundColor = 'rgb('+ armadio[id].Color_code[0]+', '+ armadio[id].Color_code[1]+', '+ armadio[id].Color_code[2]+', 0.3)'
+  }
+  //console.log(armadio[id].Color_code)
+
+  const title = document.createElement("h2");
+  title.id= 'name';
+  title.innerHTML = armadio[id].Nome;
+  title.style.lineHeight='35px';
+  title.style.height = '70px'
+  thumbnailDiv.appendChild(title);
+
+  
+  const thumbnail = document.createElement("img");
+  thumbnail.id= 'GOTDthumbnail';
+  thumbnail.src = armadio[id].Image
+  thumbnail.style.height='290px';
+
+  thumbnail.title =  
+  armadio[id].Nome + "\n" +
+  'Brand ' + armadio[id].Brand + "\n" +
+  'Made in ' + armadio[id].Production_place + "\n" +
+  'Materiale: ' + armadio[id].Material_maxPerc + "\n" +
+  'Prezzo ' + armadio[id].Cost + "\n" +
+  'Style: ' +armadio[id].Style + "\n" +
+  'Numero utilizzi ultimo mese ' + armadio[id].N_utilizzi_ultimo_mese+ "\n" +
+  armadio[id].Description_keywords + "\n" +
+  'ID, Peso, Compatibilità '+ armadio[id].Cloth_ID +' '+ armadio[id].Pesantezza +' '+ armadio[id].ColorCompatibility;
+
+  thumbnailDiv.appendChild(thumbnail);
+  card.appendChild(thumbnailDiv);
+
+
+  const labelDiv1 = document.createElement("div");
+  labelDiv1.id= 'labelDiv';
+  labelDiv1.style.width = "135px";
+
+  const brandLabel = document.createElement("p");
+  brandLabel.id= 'infoLabel';
+  brandLabel.innerHTML = 'Brand'
+  brandLabel.style.width = "120px";
+  labelDiv1.appendChild(brandLabel);
+
+  const brandInfo = document.createElement("p");
+  brandInfo.id= 'info';
+  brandInfo.innerHTML = armadio[id].Brand
+  brandInfo.style.width = "120px";
+  labelDiv1.appendChild(brandInfo);
+
+  const sizeLabel = document.createElement("p");
+  sizeLabel.id= 'infoLabel';
+  sizeLabel.innerHTML = 'Size'
+  labelDiv1.appendChild(sizeLabel);
+
+  const sizeInfo = document.createElement("p");
+  sizeInfo.id= 'info';
+  sizeInfo.innerHTML = 'M'
+  labelDiv1.appendChild(sizeInfo);
+
+  card.appendChild(labelDiv1);
+
+
+  const labelDiv2 = document.createElement("div");
+  labelDiv2.id= 'labelDiv2';
+
+  const lastUseLabel = document.createElement("p");
+  lastUseLabel.id= 'infoLabel';
+  lastUseLabel.innerHTML = 'Last use'
+  labelDiv2.appendChild(lastUseLabel);
+
+  const lastUse = document.createElement("p");
+  lastUse.id= 'info';
+  lastUse.innerHTML = armadio[id].Ultimo_utilizzo
+  labelDiv2.appendChild(lastUse);
+
+  const nUseLabel = document.createElement("p");
+  nUseLabel.id= 'infoLabel';
+  nUseLabel.innerHTML = 'N° of uses'
+  labelDiv2.appendChild(nUseLabel);
+
+  const nUse = document.createElement("p");
+  nUse.id= 'info';
+  nUse.innerHTML = armadio[id].N_utilizzi_tot + ' (' + armadio[id].N_utilizzi_ultimo_mese + " times this month)"
+  labelDiv2.appendChild(nUse);
+
+  card.appendChild(labelDiv2);
+
+  const personalNotes = document.createElement("p");
+  personalNotes.innerHTML='Personal Notes'
+  personalNotes.style.textAlign= 'left'
+  card.appendChild(personalNotes);
+
+  const personalNotesDiv = document.createElement("div");
+  personalNotesDiv.style.border = '1px solid #C6C6C6'
+  personalNotesDiv.style.borderRadius = '10px'
+  personalNotesDiv.style.padding = '4px'
+  personalNotesDiv.style.marginBottom = '20px'
+  personalNotesDiv.style.fontFamily = 'Inter'
+  personalNotesDiv.style.fontWeight = 'lighter'
+  personalNotesDiv.style.fontSize = '14px'
+  personalNotesDiv.innerHTML= armadio[id].Description_keywords
+  card.appendChild(personalNotesDiv);
+  
+
+  const tag1 = document.createElement("div");
+  tag1.className= 'tag';
+  tag1.id= 'tag1';
+  tag1.innerHTML = armadio[id].Style[0]
+  if(armadio[id].Color_code[0] == 255 && armadio[id].Color_code[1] == 255 && armadio[id].Color_code[2] == 255){
+    tag1.style.backgroundColor = 'rgb(150,150,150, 1)'
+  }else{
+    tag1.style.backgroundColor = 'rgb('+ armadio[id].Color_code[0]+', '+ armadio[id].Color_code[1]+', '+ armadio[id].Color_code[2]+', 1)'
+  }
+  
+  card.appendChild(tag1);
+
+  if(armadio[id].Style[1]){
+
+    const tag2 = document.createElement("div");
+    tag2.className= 'tag';
+    tag2.id= 'tag2';
+    tag2.innerHTML = armadio[id].Style[1]
+    if(armadio[id].Color_code[0] == 255 && armadio[id].Color_code[1] == 255 && armadio[id].Color_code[2] == 255){
+      tag2.style.backgroundColor = 'rgb(150,150,150, 1)'
+    }else{
+      tag2.style.backgroundColor = 'rgb('+ armadio[id].Color_code[0]+', '+ armadio[id].Color_code[1]+', '+ armadio[id].Color_code[2]+', 1)'
+    }
+    card.appendChild(tag2);
+
+  }
+
+  if(armadio[id].Style[2]){
+
+    const tag3 = document.createElement("div");
+    tag3.className= 'tag';
+    tag3.id= 'tag3';
+    tag3.innerHTML = armadio[id].Style[2]
+    if(armadio[id].Color_code[0] == 255 && armadio[id].Color_code[1] == 255 && armadio[id].Color_code[2] == 255){
+      tag3.style.backgroundColor = 'rgb(150,150,150, 1)'
+    }else{
+      tag3.style.backgroundColor = 'rgb('+ armadio[id].Color_code[0]+', '+ armadio[id].Color_code[1]+', '+ armadio[id].Color_code[2]+', 1)'
+    }
+    card.appendChild(tag3);
+
+  }
+
+
+
+
+  document.getElementById(phase).appendChild(card);
+
+}
+
 
 
 
