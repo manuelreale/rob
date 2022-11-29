@@ -10,6 +10,15 @@
 </head>
 <body id="body">
 
+  <div id="black">
+    <span id="dot"></span>
+</div>
+<div id="logoAnimation">
+    <img src=".\svg\logo.svg" height="150" width="250"  id="logoSvg" style="display: inline">
+    <br>
+    <img src=".\svg\logoPayoff.svg" height="30" width="650"  id="logoPayoffSvg" style="display: inline; opacity:0%">
+</div>
+
   
     <div id="sideBar" style="position:relative;"> <!-- DIV NUMERO 1 SIDEBAR -->
         <div id="logo" onclick="window.location.href = './index.html'">
@@ -351,6 +360,13 @@
 
 <script>
 
+      document.getElementById("dot").style.animation = "scaleCircle 1.5s ease-in forwards 0s"
+      document.getElementById("black").style.animation = "disappearing 0.5s ease-in forwards 2.5s"
+      document.getElementById("logoAnimation").style.animation = "logoOpacity 1s ease-in forwards 1s, disappearing 0.5s ease-in forwards 4s"
+      document.getElementById("logoSvg").style.animation = 'disappearing 0.5s ease-in forwards 3s' 
+      document.getElementById("logoPayoffSvg").style.animation = 'logoOpacity 0.5s ease-in forwards 1.7s, disappearing 0.5s ease-in forwards 3s'
+
+      document.getElementById("logoAnimation").addEventListener("animationend", setTimeout(() => {  window.location.href = './meteo.html' }, 5000) );
 
   document.addEventListener('keydown', (event)=> {    
     if(event.key=='/'){
