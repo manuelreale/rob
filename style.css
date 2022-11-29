@@ -134,19 +134,20 @@ p.error {
   border: 1px solid black;
   padding: 1vw;
   margin: 1vw;
+  margin-left: 0px;
   text-align: center;
   font-family: "TT Firs Neue", sans-serif;
   font-weight: lighter;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .smallCard img {
-  width: 186px;
-  height: 186px;
+  width: 160px;
+  height: 160px;
   /* height: 200px; */
   object-fit: contain;
   display: inline-block;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .garmentOfTheDayCard {
@@ -425,7 +426,7 @@ button:hover {
 .containerInv{
   overflow: scroll;
   width:730px;
-  height:800px;
+  height:640px;
 }
 
 #setupOpen {
