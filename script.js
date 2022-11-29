@@ -81,7 +81,7 @@ function showCloth(id, layer){
   
   const card = document.createElement("div");
   card.className= 'card';
-  //card.id= id;
+  card.id= phase+''+id;
 
   const inUseLabel = document.createElement("p");
   inUseLabel.className= 'inUseLabel';
@@ -161,7 +161,7 @@ function showGarment(id, layer){
   
   const card = document.createElement("div");
   card.className= 'garmentOfTheDayCard';
-  //card.id= id;
+  card.id= phase+''+id;
 
   const inUseLabel = document.createElement("p");
   inUseLabel.className= 'inUseLabel2';
@@ -494,50 +494,77 @@ function createSuggestions(){
 
 
 document.addEventListener('keydown', (event)=> {    
-  if(event.key=='w'){
-    
-    document.getElementById("34").querySelector(".inUseLabel").style = 'display: inline; opacity: 100%;'
-    document.getElementById("34").querySelector("#infoDiv").style.opacity = "20%";
-    document.getElementById("34").querySelector("#imgOutfit").style.opacity = "20%";
-  }
-  if(event.key=='s'){
-    
-    document.getElementById("34").querySelector(".inUseLabel").style = 'display: none; opacity: 100%;'
-    document.getElementById("34").querySelector("#infoDiv").style.opacity = "100%";
-    document.getElementById("34").querySelector("#imgOutfit").style.opacity = "100%";
-  }
 
   if(event.key=='q'){
 
-    document.getElementById("0").querySelector(".inUseLabel2").style = 'display: inline; opacity: 100%;'
-    document.getElementById("0").querySelector('#thumbnailDiv').style.opacity = "20%";
-    document.getElementById("0").querySelector('#name').style.opacity = "20%";
-    document.getElementById("0").querySelector('#labelDiv').style.opacity = "20%";
-    document.getElementById("0").querySelector('#labelDiv2').style.opacity = "20%";
-    document.getElementById("0").querySelector('#tag1').style.opacity = "20%";
-    if(document.getElementById("0").querySelector('#tag2')){
-      document.getElementById("0").querySelector('#tag2').style.opacity = "20%";
+    document.getElementById("14").querySelector(".inUseLabel2").style = 'display: inline; opacity: 100%;'
+    document.getElementById("14").querySelector('#thumbnailDiv').style.opacity = "20%";
+    document.getElementById("14").querySelector('#name').style.opacity = "20%";
+    document.getElementById("14").querySelector('#labelDiv').style.opacity = "20%";
+    document.getElementById("14").querySelector('#labelDiv2').style.opacity = "20%";
+    document.getElementById("14").querySelector('#tag1').style.opacity = "20%";
+    if(document.getElementById("14").querySelector('#tag2')){
+      document.getElementById("14").querySelector('#tag2').style.opacity = "20%";
     }
-    if(document.getElementById("0").querySelector('#tag3')){
-      document.getElementById("0").querySelector('#tag3').style.opacity = "20%";
+    if(document.getElementById("14").querySelector('#tag3')){
+      document.getElementById("14").querySelector('#tag3').style.opacity = "20%";
     }
     
   }
   if(event.key=='a'){
     
-    document.getElementById("0").querySelector(".inUseLabel2").style = 'display: none; opacity: 100%;'
-    document.getElementById("0").querySelector('#thumbnailDiv').style.opacity = "100%";
-    document.getElementById("0").querySelector('#name').style.opacity = "100%";
-    document.getElementById("0").querySelector('#labelDiv').style.opacity = "100%";
-    document.getElementById("0").querySelector('#labelDiv2').style.opacity = "100%";
-    document.getElementById("0").querySelector('#tag1').style.opacity = "100%";
-    if(document.getElementById("0").querySelector('#tag2')){
-      document.getElementById("0").querySelector('#tag2').style.opacity = "100%";
+    document.getElementById("14").querySelector(".inUseLabel2").style = 'display: none; opacity: 100%;'
+    document.getElementById("14").querySelector('#thumbnailDiv').style.opacity = "100%";
+    document.getElementById("14").querySelector('#name').style.opacity = "100%";
+    document.getElementById("14").querySelector('#labelDiv').style.opacity = "100%";
+    document.getElementById("14").querySelector('#labelDiv2').style.opacity = "100%";
+    document.getElementById("14").querySelector('#tag1').style.opacity = "100%";
+    if(document.getElementById("14").querySelector('#tag2')){
+      document.getElementById("14").querySelector('#tag2').style.opacity = "100%";
     }
-    if(document.getElementById("0").querySelector('#tag3')){
-      document.getElementById("0").querySelector('#tag3').style.opacity = "100%";
+    if(document.getElementById("14").querySelector('#tag3')){
+      document.getElementById("14").querySelector('#tag3').style.opacity = "100%";
     }
 
+  }
+
+  if(event.key=='w'){
+    
+    document.getElementById("22").querySelector(".inUseLabel").style = 'display: inline; opacity: 100%;'
+    document.getElementById("22").querySelector("#infoDiv").style.opacity = "20%";
+    document.getElementById("22").querySelector("#imgOutfit").style.opacity = "20%";
+  }
+  if(event.key=='s'){
+    
+    document.getElementById("22").querySelector(".inUseLabel").style = 'display: none; opacity: 100%;'
+    document.getElementById("22").querySelector("#infoDiv").style.opacity = "100%";
+    document.getElementById("22").querySelector("#imgOutfit").style.opacity = "100%";
+  }
+
+  if(event.key=='e'){
+    
+    document.getElementById("28").querySelector(".inUseLabel").style = 'display: inline; opacity: 100%;'
+    document.getElementById("28").querySelector("#infoDiv").style.opacity = "20%";
+    document.getElementById("28").querySelector("#imgOutfit").style.opacity = "20%";
+  }
+  if(event.key=='d'){
+    
+    document.getElementById("28").querySelector(".inUseLabel").style = 'display: none; opacity: 100%;'
+    document.getElementById("28").querySelector("#infoDiv").style.opacity = "100%";
+    document.getElementById("28").querySelector("#imgOutfit").style.opacity = "100%";
+  }
+
+  if(event.key=='r'){
+    
+    document.getElementById("214").querySelector(".inUseLabel").style = 'display: inline; opacity: 100%;'
+    document.getElementById("214").querySelector("#infoDiv").style.opacity = "20%";
+    document.getElementById("214").querySelector("#imgOutfit").style.opacity = "20%";
+  }
+  if(event.key=='f'){
+    
+    document.getElementById("214").querySelector(".inUseLabel").style = 'display: none; opacity: 100%;'
+    document.getElementById("214").querySelector("#infoDiv").style.opacity = "100%";
+    document.getElementById("214").querySelector("#imgOutfit").style.opacity = "100%";
   }
 
 });

@@ -8,10 +8,10 @@ cambiato un attimo il database//
 style black e logo//
 
 schermata debug con i 4 vestiti e start//
-schermata selezione style
+schermata selezione style//
 new tag entra e indietro
 togli rimetti vestiti//
 vedi tutti i vestiti
 pagina singolo capo
-mancano gli sport ce ne sono solo 3 e sono tutti layer 2
+mancano gli sport ce ne sono solo 3 e sono tutti layer 2//
 
