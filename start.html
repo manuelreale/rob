@@ -59,6 +59,38 @@
 //     document.exitFullscreen();
 //   }
 // }
+
+document.addEventListener('keydown', (event)=> {    
+    if(event.key=='p'){
+        window.location.href = "./meteoAnimation.html";
+    }
+
+    if(event.key=='q'){
+       document.getElementById("vestito1").innerHTML="vestito del giorno: FUORIII"
+    }
+    if(event.key=='a'){
+       document.getElementById("vestito1").innerHTML="vestito del giorno: dentro"
+    }
+    if(event.key=='w'){
+       document.getElementById("vestito2").innerHTML="vestito 2: FUORIII"
+    }
+    if(event.key=='s'){
+       document.getElementById("vestito2").innerHTML="vestito 2: dentro"
+    }
+    if(event.key=='e'){
+       document.getElementById("vestito3").innerHTML="vestito 3: FUORIII"
+    }
+    if(event.key=='d'){
+       document.getElementById("vestito3").innerHTML="vestito 3: dentro"
+    }
+    if(event.key=='r'){
+       document.getElementById("vestito4").innerHTML="vestito 4: FUORIII"
+    }
+    if(event.key=='f'){
+       document.getElementById("vestito4").innerHTML="vestito 4: dentro"
+    }
+})
+
     function getRotation(){
     // let fs = fullscreen();
     // fullscreen(!fs);
@@ -95,35 +127,6 @@
 }
 
 
-document.addEventListener('keydown', (event)=> {    
-    if(event.key=='p'){
-        window.location.href = "./meteoAnimation.html";
-    }
 
-    if(event.key=='q'){
-       document.getElementById("vestito1").innerHTML="vestito del giorno: FUORIII"
-    }
-    if(event.key=='a'){
-       document.getElementById("vestito1").innerHTML="vestito del giorno: dentro"
-    }
-    if(event.key=='w'){
-       document.getElementById("vestito2").innerHTML="vestito 2: FUORIII"
-    }
-    if(event.key=='s'){
-       document.getElementById("vestito2").innerHTML="vestito 2: dentro"
-    }
-    if(event.key=='e'){
-       document.getElementById("vestito3").innerHTML="vestito 3: FUORIII"
-    }
-    if(event.key=='d'){
-       document.getElementById("vestito3").innerHTML="vestito 3: dentro"
-    }
-    if(event.key=='r'){
-       document.getElementById("vestito4").innerHTML="vestito 4: FUORIII"
-    }
-    if(event.key=='f'){
-       document.getElementById("vestito4").innerHTML="vestito 4: dentro"
-    }
-})
 
 </script>
