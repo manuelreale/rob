@@ -39,7 +39,7 @@ var swiper = new Swiper(".mySwiper", {
 
 swiper.on('progress', function () {
   console.log(swiper.progress);
-  document.getElementById('wrapperC').style.marginLeft=(-300+swiper.progress*180)+'px'
+  document.getElementById('wrapperC').style.marginLeft=(swiper.progress*180)+'px'
 });
 
 
