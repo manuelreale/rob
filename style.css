@@ -518,6 +518,7 @@ button:hover {
   -webkit-box-sizing: border-box;
   
   display: flex;
+  flex-direction:column;
   justify-content: center;
   align-items: center;
 
