@@ -243,4 +243,14 @@ function università(){ localStorage.setItem("stile", JSON.stringify(["Ufficio",
 
 function elegante(){localStorage.setItem("stile", JSON.stringify(["Elegante", "Cerimonia", "Glamour"])) }
 
+document.addEventListener('keydown', (event)=> {    
+    if(event.key=='l'){
+      window.location.href = './new-tag.html'
+    }
+    if(event.key=='k'){
+      history.back()
+    }
+  
+  });
+
 </script>

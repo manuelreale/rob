@@ -11,6 +11,7 @@
 
 <body id="body">
     <div class="error">
+        <img height="50" width="50" onclick="history.back()"  style="position: absolute; top:10%; left: 10%" src="./svg/back.svg">
         <img src=".\imgs\alert-circle.svg" height="250" width="250">
         <h1 class="error">Unknown tag!</h1>
         <p class="error">The last item you put in your closet has an unknown tag.<br>Please scan the QR code and fill in
@@ -24,3 +25,14 @@
 <!-- SERVONO PER FAR SPARIRE LA PAGINA POI? -->
 <!-- <script type="text/javascript" src="functions.js"></script>
 <script type="text/javascript" src="script.js"></script> -->
+<script>
+    document.addEventListener('keydown', (event)=> {    
+    if(event.key=='l'){
+      window.location.href = './new-tag.html'
+    }
+    if(event.key=='k'){
+      history.back()
+    }
+  
+  });
+</script>
