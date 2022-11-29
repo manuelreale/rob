@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+
+    <title>capo</title>
+  </head>
+  <body id="body">
+
+<div id="sideBar"> <!-- DIV NUMERO 1 SIDEBAR -->
+  <div id="logo" style="background-color:white" onclick="window.location.href = './index.html'">
+    <h1 id="logoFont">Rob</h1>
+  </div>
+  <div id="tab"><img src=".\imgs\wardrobeActive.svg"></div>
+  <div id="tab"><img src=".\imgs\insights.svg" onclick="window.location.href = './insights.html'"></div>
+  <div id="tab" style="position:absolute; bottom:16px;"><img src=".\imgs\settings.svg"></div>
+</div>
+<main class="index">
+  <img onclick="history.back()"  style="margin-top:16px; margin-left:32px; margin-right:-14px" src="./svg/back.svg">
+<div class="titoloDiv" style="display:inline;"><h1>Your wardrobe</h1></div> <!-- DIV NUMERO 2 TITOLO -->
+<div class="contenuto">
+<img style="float: left; margin-top:44px; margin-left:24px; margin-right:24px" src=".\svg\filtriInventario.svg">
+
+<div style="display: flex; flex-direction: column;">
+<img style="width: 594px; float: left; margin-top:44px; margin-left:-10px; margin-right:24px" src=".\svg\sortInventario.svg">
+<div style="float: left; margin-top:10px;" class='containerInv' id="1" style="float:left;"></div> <!-- DIV NUMERO 3 CAPO DEL GIORNO-->
+</div>
+
+</div>
+</main>
+
+
+  </body>
+</html>
+
+<!-- <script type="text/javascript" src="csvjson.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="functions.js"></script>
+<script type="text/javascript" src="script.js"></script>
+<script>
+
+let capo;
+
+
+  
+  fetch('./armadio.json')
+.then(response => {
+  return response.json();
+})
+.then(jsondata => {
+  armadio = jsondata;
+  hexToRGB()
+  armadio = armadio.filter(isCorrectWeight)
+  for(let i=0; i<armadio.length; i++){
+    createInventorysmallCard(i)
+  }
+  
+});
+
+
+function createInventorysmallCard(id){
+
+  const smallCard = document.createElement("div");
+  smallCard.className= 'smallCard';
+  smallCard.id= phase+''+armadio[id].Cloth_ID;
+  smallCard.onclick = function(){viewCloth(this)}
+
+  const thumbnail = document.createElement("img");
+  thumbnail.src = armadio[id].Image
+  thumbnail.id = "imgOutfit"
+
+  thumbnail.title =  
+  armadio[id].Nome + "\n" +
+  'Brand ' + armadio[id].Brand + "\n" +
+  'Made in ' + armadio[id].Production_place + "\n" +
+  'Materiale: ' + armadio[id].Material_maxPerc + "\n" +
+  'Prezzo ' + armadio[id].Cost + "\n" +
+  'Style: ' +armadio[id].Style + "\n" +
+  'Numero utilizzi ultimo mese ' + armadio[id].N_utilizzi_ultimo_mese+ "\n" +
+  armadio[id].Description_keywords + "\n" +
+  'ID, Peso, Compatibilità '+ armadio[id].Cloth_ID +' '+ armadio[id].Pesantezza +' '+ armadio[id].ColorCompatibility;
+
+  smallCard.appendChild(thumbnail);
+  document.getElementById('1').appendChild(smallCard);
+
+}
+
+document.addEventListener('keydown', (event)=> {    
+    if(event.key=='l'){
+      window.location.href = './new-tag.html'
+    }
+    if(event.key=='k'){
+      history.back()
+    }
+  
+  });
+
+    
+</script>
