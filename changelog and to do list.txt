@@ -18,4 +18,5 @@ logo e payoff nuovi//
 pagina singolo capo/
 vedi tutti i vestiti
 random negli altri stili
+Insights magari solo svg
 
