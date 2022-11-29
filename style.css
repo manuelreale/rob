@@ -623,3 +623,15 @@ button:hover {
   /* box-sizing: border-box; */
  
 }
+
+.garmentInfo{
+  margin-top: 20px;
+  float: left;
+  height:720px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.garmentInfo::-webkit-scrollbar {
+  display: none;
+}
