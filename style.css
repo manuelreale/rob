@@ -132,6 +132,7 @@ p.error {
   margin-left: 36px;
   text-align: left;
   overflow: hidden;
+  z-index: 100;
   /* width: 360px; */
   /* height: 645px; */
 }

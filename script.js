@@ -28,7 +28,7 @@ let clothOfTheDay;
 var swiper = new Swiper(".mySwiper", {
   effect: "cards",
   grabCursor: true,
-  slideToClickedSlide:true,
+  //slideToClickedSlide:true,
   cardsEffect: {
     perSlideRotate: 0,
     perSlideOffset: 20,
@@ -81,7 +81,8 @@ function showCloth(id, layer){
   
   const card = document.createElement("div");
   card.className= 'card';
-  card.id= phase+''+id;
+  card.id= phase+''+armadio[id].Cloth_ID;
+  card.onclick = function(){viewCloth(this)}
 
   const inUseLabel = document.createElement("p");
   inUseLabel.className= 'inUseLabel';
@@ -161,7 +162,8 @@ function showGarment(id, layer){
   
   const card = document.createElement("div");
   card.className= 'garmentOfTheDayCard';
-  card.id= phase+''+id;
+  card.id= phase+''+armadio[id].Cloth_ID;
+  card.onclick = function(){viewCloth(this)}
 
   const inUseLabel = document.createElement("p");
   inUseLabel.className= 'inUseLabel2';
@@ -175,7 +177,7 @@ function showGarment(id, layer){
   }else{
     thumbnailDiv.style.backgroundColor = 'rgb('+ armadio[id].Color_code[0]+', '+ armadio[id].Color_code[1]+', '+ armadio[id].Color_code[2]+', 0.3)'
   }
-  console.log(armadio[id].Color_code)
+  //console.log(armadio[id].Color_code)
 
   const label = document.createElement('h3');
   label.innerHTML= 'The garment of the day'
@@ -494,9 +496,9 @@ function createSuggestions(){
 
 
 document.addEventListener('keydown', (event)=> {    
-
+  
   if(event.key=='q'){
-
+    text.substring(1, 4);
     document.getElementById("14").querySelector(".inUseLabel2").style = 'display: inline; opacity: 100%;'
     document.getElementById("14").querySelector('#thumbnailDiv').style.opacity = "20%";
     document.getElementById("14").querySelector('#name').style.opacity = "20%";
@@ -568,6 +570,12 @@ document.addEventListener('keydown', (event)=> {
   }
 
 });
+
+function viewCloth(elem){
+let capo = elem.id.substring(1);
+localStorage.setItem("capo", capo);
+window.location.href = './capo.html'
+}
 
 
 
