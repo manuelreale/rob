@@ -24,6 +24,7 @@
 }
 
 html{
+  object-fit:none;
   /* overflow-x: hidden;
   overflow-y: hidden; */
 }
@@ -71,7 +72,8 @@ h1 {
   width: 1184px;
   height: 834px;
   /* display:inline-block; */
-  position: absolute;
+  /* position: absolute; */
+  position:fixed;
   left: 150px;
   top: 20px;
 }
@@ -193,6 +195,7 @@ p.error {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 
 .card img {
   margin-top: 15px;
@@ -598,7 +601,7 @@ button:hover {
 }
 
 .selezioneStile {
-  width: 700px;
+  width: 550px;
   height: 600px;
   display: inline-block;
   justify-content: center;
@@ -669,4 +672,10 @@ button:hover {
 
 .garmentInfo::-webkit-scrollbar {
   display: none;
+}
+
+#wrapperS{
+  display: flex;
+  width:500px;
+  object-fit:none;
 }
