@@ -123,6 +123,30 @@ p.error {
   font-weight: lighter;
 }
 
+.smallCard{
+  width: auto;
+  height: auto;
+  display: inline-block;
+  background-color: white;
+  /* border-radius: 24px; */
+  border: 1px solid black;
+  padding: 1vw;
+  margin: 1vw;
+  text-align: center;
+  font-family: "TT Firs Neue", sans-serif;
+  font-weight: lighter;
+  border-radius: 20px;
+}
+
+.smallCard img {
+  width: 186px;
+  height: 186px;
+  /* height: 200px; */
+  object-fit: contain;
+  display: inline-block;
+  border-radius: 20px;
+}
+
 .garmentOfTheDayCard {
   vertical-align: bottom;
   width: 320px;
@@ -393,6 +417,12 @@ button:hover {
   margin-right: -5px; */
   /* top:0px; */
   /* border: 1px solid black; */
+}
+
+.containerInv{
+  overflow: scroll;
+  width:730px;
+  height:800px;
 }
 
 #setupOpen {
