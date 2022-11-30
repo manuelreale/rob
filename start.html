@@ -59,45 +59,10 @@
 //     document.exitFullscreen();
 //   }
 // }
-    function getRotation(){
-    // let fs = fullscreen();
-    // fullscreen(!fs);
-
-    // toggleFullScreen();
-    DeviceMotionEvent.requestPermission().then(response => {
-        if (response == 'granted') {
-
-        // Add a listener to get smartphone acceleration
-            // in the XYZ axes (units in m/s^2)
-            window.addEventListener('devicemotion', (event) => {
-                // console.log(event);
-                rotation = Math.floor((event.rotationRate.alpha)*100)+Math.floor((event.rotationRate.beta)*100)+Math.floor((event.rotationRate.gamma)*100);
-                if (rotation >= 2000 || rotation <=-2000 ){
-                    
-                  //document.getElementById("blackScreen").style.backgroundColor = "white";
-                  window.location.href = "./meteo.html";
-
-                  document.getElementById("startBtn").remove(); //remove button
-                  document.getElementById("select").remove(); //remove button
-                //   document.getElementById("startLogo")
-                }
-                // else {
-                //   document.getElementById("blackScreen").style.backgroundColor = "#000";
-                // }
-            });
-       // Add a listener to get smartphone orientation
-           // in the alpha-beta-gamma axes (units in degrees)
-            window.addEventListener('deviceorientation',(event) => {
-                // console.log(event);
-            });
-        }
-    });
-}
-
 
 document.addEventListener('keydown', (event)=> {    
     if(event.key=='p'){
-        window.location.href = "./meteo.html";
+        window.location.href = "./meteoAnimation.html";
     }
 
     if(event.key=='q'){
@@ -125,5 +90,43 @@ document.addEventListener('keydown', (event)=> {
        document.getElementById("vestito4").innerHTML="vestito 4: dentro"
     }
 })
+
+    function getRotation(){
+    // let fs = fullscreen();
+    // fullscreen(!fs);
+
+    // toggleFullScreen();
+    DeviceMotionEvent.requestPermission().then(response => {
+        if (response == 'granted') {
+
+        // Add a listener to get smartphone acceleration
+            // in the XYZ axes (units in m/s^2)
+            window.addEventListener('devicemotion', (event) => {
+                // console.log(event);
+                rotation = Math.floor((event.rotationRate.alpha)*100)+Math.floor((event.rotationRate.beta)*100)+Math.floor((event.rotationRate.gamma)*100);
+                if (rotation >= 2000 || rotation <=-2000 ){
+                    
+                  //document.getElementById("blackScreen").style.backgroundColor = "white";
+                  window.location.href = "./meteoAnimation.html";
+
+                  document.getElementById("startBtn").remove(); //remove button
+                  document.getElementById("select").remove(); //remove button
+                //   document.getElementById("startLogo")
+                }
+                // else {
+                //   document.getElementById("blackScreen").style.backgroundColor = "#000";
+                // }
+            });
+       // Add a listener to get smartphone orientation
+           // in the alpha-beta-gamma axes (units in degrees)
+            window.addEventListener('deviceorientation',(event) => {
+                // console.log(event);
+            });
+        }
+    });
+}
+
+
+
 
 </script>
