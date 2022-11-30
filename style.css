@@ -680,3 +680,7 @@ button:hover {
   width:500px;
   object-fit:none;
 }
+
+.invisibile {
+  display: none;
+}
