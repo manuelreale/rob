@@ -692,7 +692,8 @@ function showSingleGarment(id, layer){
   const personalNotesDiv = document.createElement("div");
   personalNotesDiv.style.border = '1px solid #C6C6C6'
   personalNotesDiv.style.borderRadius = '10px'
-  personalNotesDiv.style.padding = '4px'
+  personalNotesDiv.style.padding = '6px'
+  personalNotesDiv.style.paddingLeft = '12px'
   personalNotesDiv.style.marginBottom = '20px'
   personalNotesDiv.style.fontFamily = 'Inter'
   personalNotesDiv.style.fontWeight = 'lighter'
