@@ -255,14 +255,20 @@ function showGarment(id, layer){
 
 
 function findClothOfTheDay(){
+  if(localStorage.getItem("clothOfTheDay")){
+    clothOfTheDay=armadio[localStorage.getItem("clothOfTheDay")];
+    cotdBl.push(localStorage.getItem("clothOfTheDay"));
+  }else{
   let flag=0;
   for(let i=0; i<armadio.length && flag==0; i++){
     if(armadio[i].Layer != 5 && armadio[i].Layer != 6 && armadio[i].Layer != 0 && armadio[i].Layer != 1 && !cotdBl.includes(i)){
       flag=1;
       clothOfTheDay=armadio[i];
+      localStorage.setItem("clothOfTheDay", i)
       cotdBl.push(i);
     }
   }
+}
 
 }
 
@@ -625,8 +631,8 @@ function showSingleGarment(id, layer){
   const thumbnail = document.createElement("img");
   thumbnail.id= 'GOTDthumbnail';
   thumbnail.src = armadio[id].Image
-  thumbnail.style.height='290px';
-  thumbnail.style.marginTop='-20px';
+  thumbnail.style.height='270px';
+  thumbnail.style.marginTop='10px';
 
 
   thumbnail.title =  

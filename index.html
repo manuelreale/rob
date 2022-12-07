@@ -33,8 +33,8 @@
   <div class="sottoTitoloDiv">Pick up and wear your favourite match <img style="margin-left: 440px"src="./svg/mode.svg"></div>
   
 <div class='container ' id="1" style="float:left;"> <!-- DIV NUMERO 3 CAPO DEL GIORNO-->
-<div class="button" id="changeButton"  onClick=hideCards() style="margin-left:35px; margin-top:567px">change</div>
-<div class="buttonFull" id="acceptButton"  onClick="inizio=0; acceptClothes();"style="margin-left:207px; margin-top:567px">Ok</div>
+<div class="button" id="changeButton"  onClick="hideCards(); localStorage.removeItem('clothOfTheDay');" style="margin-left:35px; margin-top:567px">change</div>
+<div class="buttonFull" id="acceptButton"  onClick="localStorage.setItem('inizio', 0); acceptClothes();"style="margin-left:207px; margin-top:567px">Ok</div>
 </div>
 
 <div class="selezioneStile white" style="display:none; justify-content: center; position: absolute; margin-top:18px" id="selector">
@@ -78,7 +78,7 @@
 
 
     <button class="rounded" id="confirmBtn" style="width: 185px;height: 48px; display: block; margin: 16px; position: absolute; bottom:24px; right:0px"
-      onclick=changeClothes(inizio)>
+      onclick=changeClothes(localStorage.getItem("inizio"))>
       <!--onclick active -->
       <p style="font-size:24px;">confirm</p>
     </button>
@@ -106,7 +106,7 @@
 <script type="text/javascript" src="script.js"></script>
 <script>
 
-  let inizio=1;
+  let inizio = localStorage.getItem("inizio");
 
   fetch('./armadio.json')
 .then(response => {
@@ -118,8 +118,15 @@
   stile = JSON.parse(localStorage.getItem("stile"));
   console.log(stile)
   //localStorage.removeItem("stile");
+if(inizio==0){
+  changeClothes(localStorage.getItem("inizio"))
+  var btn = document.getElementById('acceptButton')
+  btn.style.display= 'none'
 
+}else{
   createSuggestions()
+}
+  
 
 });
 
