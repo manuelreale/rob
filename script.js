@@ -18,6 +18,8 @@ let armadio5Bl=0;
 let armadio6Bl=0;
 let cotdBl=[];
 
+let idList=[]
+
 let phase=1;
 
 let stile = "Ufficio"
@@ -79,10 +81,11 @@ function showCloth(id, layer){
     }
   }
 
+  idList.push(armadio[id].Cloth_ID);
   
   const card = document.createElement("div");
   card.className= 'card';
-  card.id= phase+''+armadio[id].Cloth_ID;
+  card.id= 'd'+armadio[id].Cloth_ID;
   card.onclick = function(){viewCloth(this)}
 
   const inUseLabel = document.createElement("p");
@@ -169,10 +172,12 @@ function showGarment(id, layer){
       stop = 1;
     }
   }
+
+  idList.push(armadio[id].Cloth_ID);
   
   const card = document.createElement("div");
   card.className= 'garmentOfTheDayCard';
-  card.id= phase+''+armadio[id].Cloth_ID;
+  card.id= 'd'+armadio[id].Cloth_ID;
   card.onclick = function(){viewCloth(this)}
 
   const inUseLabel = document.createElement("p");
@@ -507,74 +512,59 @@ function createSuggestionsNoGOTD(){
 document.addEventListener('keydown', (event)=> {    
   
   if(event.key=='q'){
-    document.getElementById("129").querySelector(".inUseLabel2").style = 'display: inline; opacity: 100%;'
-    document.getElementById("129").querySelector('#thumbnailDiv').style.opacity = "20%";
-    document.getElementById("129").querySelector('#name').style.opacity = "20%";
-    document.getElementById("129").querySelector('#labelDiv').style.opacity = "20%";
-    document.getElementById("129").querySelector('#labelDiv2').style.opacity = "20%";
-    document.getElementById("129").querySelector('#tag1').style.opacity = "20%";
-    if(document.getElementById("129").querySelector('#tag2')){
-      document.getElementById("129").querySelector('#tag2').style.opacity = "20%";
-    }
-    if(document.getElementById("129").querySelector('#tag3')){
-      document.getElementById("129").querySelector('#tag3').style.opacity = "20%";
-    }
+    document.getElementById('d'+String(idList[0])).querySelector(".inUseLabel2").style = 'display: inline; opacity: 100%;'
+    document.getElementById('d'+String(idList[0])).querySelector('#thumbnailDiv').style.opacity = "20%";
+    document.getElementById('d'+String(idList[0])).querySelector('#labelDiv2').style.opacity = "20%";
+    document.getElementById('1').querySelector('#changeButton').style.opacity = "20%";
+
     
   }
   if(event.key=='a'){
     
-    document.getElementById("129").querySelector(".inUseLabel2").style = 'display: none; opacity: 100%;'
-    document.getElementById("129").querySelector('#thumbnailDiv').style.opacity = "100%";
-    document.getElementById("129").querySelector('#name').style.opacity = "100%";
-    document.getElementById("129").querySelector('#labelDiv').style.opacity = "100%";
-    document.getElementById("129").querySelector('#labelDiv2').style.opacity = "100%";
-    document.getElementById("129").querySelector('#tag1').style.opacity = "100%";
-    if(document.getElementById("129").querySelector('#tag2')){
-      document.getElementById("129").querySelector('#tag2').style.opacity = "100%";
-    }
-    if(document.getElementById("129").querySelector('#tag3')){
-      document.getElementById("129").querySelector('#tag3').style.opacity = "100%";
-    }
+    document.getElementById('d'+String(idList[0])).querySelector(".inUseLabel2").style = 'display: none; opacity: 100%;'
+    document.getElementById('d'+String(idList[0])).querySelector('#thumbnailDiv').style.opacity = "100%";
+    document.getElementById('d'+String(idList[0])).querySelector('#labelDiv2').style.opacity = "100%";
+    document.getElementById('1').querySelector('#changeButton').style.opacity = "100%";
 
   }
 
   if(event.key=='w'){
     
-    document.getElementById("214").querySelector(".inUseLabel").style = 'display: inline; opacity: 100%;'
-    document.getElementById("214").querySelector("#infoDiv").style.opacity = "20%";
-    document.getElementById("214").querySelector("#imgOutfit").style.opacity = "20%";
+    document.getElementById('d'+String(idList[1])).querySelector(".inUseLabel").style = 'display: inline; opacity: 100%;'
+    document.getElementById('d'+String(idList[1])).querySelector("#infoDiv").style.opacity = "20%";
+    document.getElementById('d'+String(idList[1])).querySelector("#imgOutfit").style.opacity = "20%";
   }
   if(event.key=='s'){
     
-    document.getElementById("214").querySelector(".inUseLabel").style = 'display: none; opacity: 100%;'
-    document.getElementById("214").querySelector("#infoDiv").style.opacity = "100%";
-    document.getElementById("214").querySelector("#imgOutfit").style.opacity = "100%";
+    document.getElementById('d'+String(idList[1])).querySelector(".inUseLabel").style = 'display: none; opacity: 100%;'
+    document.getElementById('d'+String(idList[1])).querySelector("#infoDiv").style.opacity = "100%";
+    document.getElementById('d'+String(idList[1])).querySelector("#imgOutfit").style.opacity = "100%";
   }
 
   if(event.key=='e'){
     
-    document.getElementById("233").querySelector(".inUseLabel").style = 'display: inline; opacity: 100%;'
-    document.getElementById("233").querySelector("#infoDiv").style.opacity = "20%";
-    document.getElementById("233").querySelector("#imgOutfit").style.opacity = "20%";
+    document.getElementById('d'+String(idList[2])).querySelector(".inUseLabel").style = 'display: inline; opacity: 100%;'
+    document.getElementById('d'+String(idList[2])).querySelector("#infoDiv").style.opacity = "20%";
+    document.getElementById('d'+String(idList[2])).querySelector("#imgOutfit").style.opacity = "20%";
   }
   if(event.key=='d'){
     
-    document.getElementById("233").querySelector(".inUseLabel").style = 'display: none; opacity: 100%;'
-    document.getElementById("233").querySelector("#infoDiv").style.opacity = "100%";
-    document.getElementById("233").querySelector("#imgOutfit").style.opacity = "100%";
+    document.getElementById('d'+String(idList[2])).querySelector(".inUseLabel").style = 'display: none; opacity: 100%;'
+    document.getElementById('d'+String(idList[2])).querySelector("#infoDiv").style.opacity = "100%";
+    document.getElementById('d'+String(idList[2])).querySelector("#imgOutfit").style.opacity = "100%";
   }
 
   if(event.key=='r'){
     
-    document.getElementById("225").querySelector(".inUseLabel").style = 'display: inline; opacity: 100%;'
-    document.getElementById("225").querySelector("#infoDiv").style.opacity = "20%";
-    document.getElementById("225").querySelector("#imgOutfit").style.opacity = "20%";
+    document.getElementById('d'+String(idList[3])).querySelector(".inUseLabel").style = 'display: inline; opacity: 100%;'
+    document.getElementById('d'+String(idList[3])).querySelector("#infoDiv").style.opacity = "20%";
+    document.getElementById('d'+String(idList[3])).querySelector("#imgOutfit").style.opacity = "20%";
   }
   if(event.key=='f'){
     
-    document.getElementById("225").querySelector(".inUseLabel").style = 'display: none; opacity: 100%;'
-    document.getElementById("225").querySelector("#infoDiv").style.opacity = "100%";
-    document.getElementById("225").querySelector("#imgOutfit").style.opacity = "100%";
+    document.getElementById('d'+String(idList[3])).querySelector(".inUseLabel").style = 'display: none; opacity: 100%;'
+    document.getElementById('d'+String(idList[3])).querySelector("#infoDiv").style.opacity = "100%";
+    document.getElementById('d'+String(idList[3])).querySelector("#imgOutfit").style.opacity = "100%";
   }
 
 });
