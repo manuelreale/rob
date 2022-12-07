@@ -190,9 +190,11 @@ function showGarment(id, layer){
   if(armadio[id].Color_code[0] == 255 && armadio[id].Color_code[1] == 255 && armadio[id].Color_code[2] == 255){
     thumbnailDiv.style.backgroundColor = 'rgb(150,150,150, 0.1)'
     document.getElementById('acceptButton').style.backgroundColor = 'rgb(0,0,0, 1)'
+    document.getElementById('modeBg').style.backgroundColor = 'rgb(0,0,0, 1)'
 
   }else{
     document.getElementById('acceptButton').style.backgroundColor = 'rgb('+ armadio[id].Color_code[0]+', '+ armadio[id].Color_code[1]+', '+ armadio[id].Color_code[2]+', 1)'
+    document.getElementById('modeBg').style.backgroundColor = 'rgb('+ armadio[id].Color_code[0]+', '+ armadio[id].Color_code[1]+', '+ armadio[id].Color_code[2]+', 1)'
 
     thumbnailDiv.style.backgroundColor = 'rgb('+ armadio[id].Color_code[0]+', '+ armadio[id].Color_code[1]+', '+ armadio[id].Color_code[2]+', 0.3)'
   }

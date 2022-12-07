@@ -767,3 +767,14 @@ button:hover {
   justify-content: center;
   flex-direction: column;
 }
+
+#modeBg{
+  position: absolute;
+  margin-top: -32px;
+  margin-left: 886px;
+  z-index: -1;
+  height: 24px;
+  width: 44px;
+  border-radius: 12px;
+  background-color: #1E1E1E;
+}
