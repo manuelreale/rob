@@ -134,3 +134,143 @@ function sortColorCompatibility(a, b) {
   }
   return 0;
 }
+
+function removeCards(){
+
+  var paras = document.getElementsByClassName('card');
+
+  while(paras[0]) {
+         paras[0].parentNode.removeChild(paras[0]);
+  }
+
+}
+
+function hideCards(){
+
+  var wrapperS = document.getElementById('wrapperS')
+  wrapperS.style.display= 'none'
+
+  var selector = document.getElementById('selector')
+  selector.style.display= 'unset'
+
+  var btn = document.getElementById('changeButton')
+  btn.style.display= 'none'
+
+}
+
+function removeGOTDCard(){
+  var paras2 = document.getElementsByClassName('garmentOfTheDayCard');
+
+  while(paras2[0]) {
+    paras2[0].parentNode.removeChild(paras2[0]);
+}
+
+}
+
+function changeClothes(inizio){
+
+
+
+  if(inizio==0){  
+
+    removeCards()
+    removeGOTDCard()
+
+    var wrapperS = document.getElementById('wrapperS')
+    wrapperS.style.display= 'flex'
+
+    var selector = document.getElementById('selector')
+    selector.style.display= 'none'
+  
+    var btn = document.getElementById('changeButton')
+    btn.style.display= 'flex'
+  
+    phase=1;
+    idBlacklist=[];
+  
+    armadio0Bl=0;
+    armadio1Bl=0;
+    armadio2Bl=0;
+    armadio3Bl=0;
+    armadio4Bl=0;
+    armadio5Bl=0;
+    armadio6Bl=0;
+  
+    createSuggestions()
+  
+  }else{
+
+    removeGOTDCard()
+
+    var selector = document.getElementById('selector')
+    selector.style.display= 'none'
+
+    var btn = document.getElementById('changeButton')
+    btn.style.display= 'flex'
+
+    phase=1;
+    idBlacklist=[];
+  
+    armadio0Bl=0;
+    armadio1Bl=0;
+    armadio2Bl=0;
+    armadio3Bl=0;
+    armadio4Bl=0;
+    armadio5Bl=0;
+    armadio6Bl=0;
+
+    createSuggestionsOnlyGOTD()
+
+  }
+
+}
+
+function acceptClothes(){
+  removeCards()
+
+  var wrapperS = document.getElementById('wrapperS')
+  wrapperS.style.display= 'flex'
+
+  var selector = document.getElementById('selector')
+  selector.style.display= 'none'
+
+  var btn = document.getElementById('changeButton')
+  btn.style.display= 'flex'
+
+  var btn = document.getElementById('acceptButton')
+  btn.style.display= 'none'
+
+  phase=1;
+  idBlacklist=[];
+
+  armadio0Bl=0;
+  armadio1Bl=0;
+  armadio2Bl=0;
+  armadio3Bl=0;
+  armadio4Bl=0;
+  armadio5Bl=0;
+  armadio6Bl=0;
+
+  createSuggestionsNoGOTD()
+}
+
+
+//non funzionano per qualche magia
+
+// function removeCards() {
+//   var paras = document.getElementsByClassName('card');
+
+// while(paras[0]) {
+//     paras[0].parentNode.removeChild(paras[0]);
+// }
+
+// ​}
+
+// function removeGOTDCards(){
+//   var paras2 = document.getElementsByClassName('garmentOfTheDayCard');
+
+// while(paras2[0]) {
+//     paras2[0].parentNode.removeChild(paras2[0]);
+// }
+
+// ​}

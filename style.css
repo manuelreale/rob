@@ -152,8 +152,8 @@ p.error {
 
 .garmentOfTheDayCard {
   vertical-align: bottom;
-  width: 320px;
-  height: auto;
+  width: 360px;
+  height: 600px;
   display: inline-block;
   background-color: white;
   border: 1px solid #505050;
@@ -164,18 +164,55 @@ p.error {
   text-align: left;
   overflow: hidden;
   z-index: 100;
+  box-sizing: border-box;
   /* width: 360px; */
   /* height: 645px; */
 }
 
+.singleGarmentCard {
+  vertical-align: bottom;
+  width: 360px;
+  height: 650px;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid #505050;
+  border-radius: 10px;
+  padding: 18px;
+  margin: 20px;
+  margin-left: 16px;
+  text-align: left;
+  overflow: hidden;
+  z-index: 100;
+  box-sizing: border-box;
+  /* width: 360px; */
+  /* height: 645px; */
+}
+
+.singleGarmentCard h2 {
+  font-family: 'TTFirsNeue';
+  color: #212121;
+  font-size: 32px;
+  font-weight: 900;
+  width: 220px;
+  height: 82px;
+  margin-top: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
 .card {
   width: 468px;
-  height: calc(541px/3);
+  height: calc(599px/3);
   border: 0px solid #505050;
   border-bottom: 1px solid #505050;
   text-align: left;
   margin: 0px;
   padding: 0px;
+  padding-top: 10px;
+  box-sizing:border-box;
 
 }
 
@@ -184,7 +221,7 @@ p.error {
   color: #212121;
   font-size: 20px;
   font-weight: 900;
-  width: 260px;
+  max-width: 230px;
 
   text-align: left;
   vertical-align: top;
@@ -195,6 +232,7 @@ p.error {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display:inline-block;
 }
 
 
@@ -216,8 +254,9 @@ p.error {
   font-style: italic;
   font-size: 14px;
   color: #878787;
-  width: 150px;
+  width: 250px;
   margin: 0;
+  margin-bottom: 4px;
 }
 
 #info {
@@ -241,7 +280,7 @@ p.error {
   display: block;
   font-family: 'Inter';
   font-style: italic;
-  font-size: 12px;
+  font-size: 14px;
   color: #878787;
   width: 200px;
   margin: 0;
@@ -253,7 +292,7 @@ p.error {
   text-align: left;
   display: block;
   font-family: 'TTFirsNeue';
-  font-size: 12px;
+  font-size: 16px;
   color: #212121;
   width: 200px;
   margin: 0;
@@ -272,7 +311,8 @@ p.error {
 .garmentOfTheDayCard h3 {
   font-family: 'TTFirsNeue';
   color: #212121;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 900;
   margin-top: 0;
   margin-right: 8px;
   top: 0px;
@@ -305,7 +345,7 @@ p.error {
   margin: -20px;
   padding: 20px;
   border-radius: 10px;
-  margin-bottom: 8px;
+  margin-bottom: 24px;
   width: 320px;
   height: 368px;
   align-content: center;
@@ -319,7 +359,7 @@ p.error {
 }
 #labelDiv2 {
   display: inline-block;
-  width: 50%;
+  width: 100%;
   margin-bottom: 4px;
 }
 
@@ -446,8 +486,8 @@ button:hover {
 
 
 .swiper {
-  width: 468px;
-  height: 539px;
+  width: 465px;
+  height: 598px;
   display: inline-block;
   vertical-align: bottom;
   margin-bottom: 24px;
@@ -679,8 +719,51 @@ button:hover {
   display: flex;
   width:500px;
   object-fit:none;
+  margin-top:20px;
 }
 
 .invisibile {
   display: none;
+}
+
+.sottoTitoloDiv{
+  font-family: 'TTFirsNeue';
+  color: #212121;
+  font-size: 24px;
+  margin-left: 20px;
+  padding-top: 44px;
+  font-weight: 800;
+  
+}
+
+.button{
+  font-family: 'TTFirsNeue';
+  font-size: 20px;
+  font-weight: 800;
+  color: #212121;
+  position: absolute;
+  border: 1px solid #212121;
+  border-radius: 33px;
+  width:150px;
+  height:33px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.buttonFull{
+  font-family: 'TTFirsNeue';
+  font-size: 20px;
+  font-weight: 800;
+  color: white;
+  background-color: #1E1E1E;
+  position: absolute;
+  border-radius: 33px;
+  width:150px;
+  height:35px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }

@@ -16,6 +16,7 @@ let armadio3Bl=0;
 let armadio4Bl=0;
 let armadio5Bl=0;
 let armadio6Bl=0;
+let cotdBl=[];
 
 let phase=1;
 
@@ -114,6 +115,15 @@ function showCloth(id, layer){
   title.innerHTML = armadio[id].Nome;
   infoDiv.appendChild(title);
 
+  const info = document.createElement('object');
+  info.id= 'infoCircle';
+  info.data = "./svg/arrow.svg";
+  info.width = "22";
+  info.height = "22";
+  info.style.marginBottom='-14px';
+  info.style.marginLeft='4px';
+  infoDiv.appendChild(info);
+
   const lastUseLabel = document.createElement("p");
   lastUseLabel.id= 'infoLabel';
   lastUseLabel.innerHTML = 'Last Use'
@@ -180,14 +190,16 @@ function showGarment(id, layer){
   //console.log(armadio[id].Color_code)
 
   const label = document.createElement('h3');
-  label.innerHTML= 'The garment of the day'
+  label.innerHTML= armadio[id].Nome
   thumbnailDiv.appendChild(label);
 
   const info = document.createElement('object');
   info.id= 'infoCircle';
-  info.data = "./svg/info.svg";
-  info.width = "32";
-  info.height = "32";
+  info.data = "./svg/arrow.svg";
+  info.width = "22";
+  info.height = "22";
+  info.style.marginBottom='4px';
+  info.style.marginLeft='-6px';
   thumbnailDiv.appendChild(info);
   //info.getSVGDocument().getElementById("svgInternalID").setAttribute("fill", "red")
 
@@ -209,47 +221,13 @@ function showGarment(id, layer){
   thumbnailDiv.appendChild(thumbnail);
   card.appendChild(thumbnailDiv);
 
-  const title = document.createElement("h2");
-  title.id= 'name';
-  title.innerHTML = armadio[id].Nome;
-  card.appendChild(title);
-
-
-  const labelDiv1 = document.createElement("div");
-  labelDiv1.id= 'labelDiv';
-  labelDiv1.style.width = "135px";
-
-  const brandLabel = document.createElement("p");
-  brandLabel.id= 'infoLabel';
-  brandLabel.innerHTML = 'Brand'
-  brandLabel.style.width = "120px";
-  labelDiv1.appendChild(brandLabel);
-
-  const brandInfo = document.createElement("p");
-  brandInfo.id= 'info';
-  brandInfo.innerHTML = armadio[id].Brand
-  brandInfo.style.width = "120px";
-  labelDiv1.appendChild(brandInfo);
-
-  const sizeLabel = document.createElement("p");
-  sizeLabel.id= 'infoLabel';
-  sizeLabel.innerHTML = 'Size'
-  labelDiv1.appendChild(sizeLabel);
-
-  const sizeInfo = document.createElement("p");
-  sizeInfo.id= 'info';
-  sizeInfo.innerHTML = 'M'
-  labelDiv1.appendChild(sizeInfo);
-
-  card.appendChild(labelDiv1);
-
 
   const labelDiv2 = document.createElement("div");
   labelDiv2.id= 'labelDiv2';
 
   const lastUseLabel = document.createElement("p");
   lastUseLabel.id= 'infoLabel';
-  lastUseLabel.innerHTML = 'Last use'
+  lastUseLabel.innerHTML = 'You didn’t use this garment since'
   labelDiv2.appendChild(lastUseLabel);
 
   const lastUse = document.createElement("p");
@@ -259,7 +237,7 @@ function showGarment(id, layer){
 
   const nUseLabel = document.createElement("p");
   nUseLabel.id= 'infoLabel';
-  nUseLabel.innerHTML = 'N° of uses'
+  nUseLabel.innerHTML = 'You used this garment'
   labelDiv2.appendChild(nUseLabel);
 
   const nUse = document.createElement("p");
@@ -268,50 +246,6 @@ function showGarment(id, layer){
   labelDiv2.appendChild(nUse);
 
   card.appendChild(labelDiv2);
-
-  const tag1 = document.createElement("div");
-  tag1.className= 'tag';
-  tag1.id= 'tag1';
-  tag1.innerHTML = armadio[id].Style[0]
-  if(armadio[id].Color_code[0] == 255 && armadio[id].Color_code[1] == 255 && armadio[id].Color_code[2] == 255){
-    tag1.style.backgroundColor = 'rgb(150,150,150, 1)'
-  }else{
-    tag1.style.backgroundColor = 'rgb('+ armadio[id].Color_code[0]+', '+ armadio[id].Color_code[1]+', '+ armadio[id].Color_code[2]+', 1)'
-  }
-  
-  card.appendChild(tag1);
-
-  if(armadio[id].Style[1]){
-
-    const tag2 = document.createElement("div");
-    tag2.className= 'tag';
-    tag2.id= 'tag2';
-    tag2.innerHTML = armadio[id].Style[1]
-    if(armadio[id].Color_code[0] == 255 && armadio[id].Color_code[1] == 255 && armadio[id].Color_code[2] == 255){
-      tag2.style.backgroundColor = 'rgb(150,150,150, 1)'
-    }else{
-      tag2.style.backgroundColor = 'rgb('+ armadio[id].Color_code[0]+', '+ armadio[id].Color_code[1]+', '+ armadio[id].Color_code[2]+', 1)'
-    }
-    card.appendChild(tag2);
-
-  }
-
-  if(armadio[id].Style[2]){
-
-    const tag3 = document.createElement("div");
-    tag3.className= 'tag';
-    tag3.id= 'tag3';
-    tag3.innerHTML = armadio[id].Style[2]
-    if(armadio[id].Color_code[0] == 255 && armadio[id].Color_code[1] == 255 && armadio[id].Color_code[2] == 255){
-      tag3.style.backgroundColor = 'rgb(150,150,150, 1)'
-    }else{
-      tag3.style.backgroundColor = 'rgb('+ armadio[id].Color_code[0]+', '+ armadio[id].Color_code[1]+', '+ armadio[id].Color_code[2]+', 1)'
-    }
-    card.appendChild(tag3);
-
-  }
-
-
 
 
   document.getElementById(phase).appendChild(card);
@@ -323,11 +257,13 @@ function showGarment(id, layer){
 function findClothOfTheDay(){
   let flag=0;
   for(let i=0; i<armadio.length && flag==0; i++){
-    if(armadio[i].Layer != 5 && armadio[i].Layer != 6 && armadio[i].Layer != 0 && armadio[i].Layer != 1){
+    if(armadio[i].Layer != 5 && armadio[i].Layer != 6 && armadio[i].Layer != 0 && armadio[i].Layer != 1 && !cotdBl.includes(i)){
       flag=1;
       clothOfTheDay=armadio[i];
+      cotdBl.push(i);
     }
   }
+
 }
 
 
@@ -479,6 +415,75 @@ function createSuggestions(){
   //console.log(idBlacklist)
 }
 
+function createSuggestionsOnlyGOTD(){
+  armadio = armadio.filter(isCorrectStyle)
+  armadio = armadio.filter(isCorrectWeight)
+  armadio.sort(sortUtilizzi);
+
+  findClothOfTheDay()
+  //armadio = armadio.filter(isColorCompatible)
+  rankColorCompatibility(armadio)
+
+  armadio0 = armadio.filter(isLayer0)
+  armadio1 = armadio.filter(isLayer1)
+  armadio2 = armadio.filter(isLayer2)
+  armadio3 = armadio.filter(isLayer3)
+  armadio4 = armadio.filter(isLayer4)
+  armadio5 = armadio.filter(isLayer5)
+  armadio6 = armadio.filter(isLayer6)
+
+  armadio0.sort(sortColorCompatibility);
+  armadio1.sort(sortColorCompatibility);
+  armadio2.sort(sortColorCompatibility);
+  armadio3.sort(sortColorCompatibility);
+  armadio4.sort(sortColorCompatibility);
+  armadio5.sort(sortColorCompatibility);
+  armadio6.sort(sortColorCompatibility);
+
+
+  
+  //showGarment(clothOfTheDay.Cloth_ID, clothOfTheDay.Layer)
+  showGarment(clothOfTheDay.Cloth_ID, clothOfTheDay.Layer)
+
+}
+
+function createSuggestionsNoGOTD(){
+  armadio = armadio.filter(isCorrectStyle)
+  armadio = armadio.filter(isCorrectWeight)
+  armadio.sort(sortUtilizzi);
+
+  //armadio = armadio.filter(isColorCompatible)
+  rankColorCompatibility(armadio)
+
+  armadio0 = armadio.filter(isLayer0)
+  armadio1 = armadio.filter(isLayer1)
+  armadio2 = armadio.filter(isLayer2)
+  armadio3 = armadio.filter(isLayer3)
+  armadio4 = armadio.filter(isLayer4)
+  armadio5 = armadio.filter(isLayer5)
+  armadio6 = armadio.filter(isLayer6)
+
+  armadio0.sort(sortColorCompatibility);
+  armadio1.sort(sortColorCompatibility);
+  armadio2.sort(sortColorCompatibility);
+  armadio3.sort(sortColorCompatibility);
+  armadio4.sort(sortColorCompatibility);
+  armadio5.sort(sortColorCompatibility);
+  armadio6.sort(sortColorCompatibility);
+
+
+  
+  phase++
+  createOutfit()
+  phase++
+  createOutfit()
+  phase++
+  createOutfit()
+  //
+
+  //console.log(idBlacklist)
+}
+
 
 
 // function casual(){stile = ["Casual", "Comfy"]; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
@@ -486,13 +491,6 @@ function createSuggestions(){
 // function elegante(){stile = ["Elegante", "Cerimonia", "Glamour","Ufficio"]; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
 // function sport(){stile = ["Sport"]; document.getElementById('setupOpen').id = 'setupClose'; createSuggestions() }
 
-// function removeCards(){
-//   var paras = document.getElementsByClassName('hi');
-
-// while(paras[0]) {
-//     paras[0].parentNode.removeChild(paras[0]);
-// }​
-// }
 
 
 document.addEventListener('keydown', (event)=> {    
@@ -596,7 +594,7 @@ function showSingleGarment(id, layer){
   }
   
   const card = document.createElement("div");
-  card.className= 'garmentOfTheDayCard';
+  card.className= 'singleGarmentCard';
   card.id= phase+''+armadio[id].Cloth_ID;
   card.onclick = function(){viewCloth(this)}
 
@@ -608,6 +606,7 @@ function showSingleGarment(id, layer){
   const thumbnailDiv = document.createElement("div");
   thumbnailDiv.id= 'thumbnailDiv';
   thumbnailDiv.style.height='390px';
+  thumbnailDiv.style.paddingBottom='20px';
   if(armadio[id].Color_code[0] == 255 && armadio[id].Color_code[1] == 255 && armadio[id].Color_code[2] == 255){
     thumbnailDiv.style.backgroundColor = 'rgb(150,150,150, 0.1)'
   }else{
@@ -627,6 +626,8 @@ function showSingleGarment(id, layer){
   thumbnail.id= 'GOTDthumbnail';
   thumbnail.src = armadio[id].Image
   thumbnail.style.height='290px';
+  thumbnail.style.marginTop='-20px';
+
 
   thumbnail.title =  
   armadio[id].Nome + "\n" +
@@ -642,42 +643,12 @@ function showSingleGarment(id, layer){
   thumbnailDiv.appendChild(thumbnail);
   card.appendChild(thumbnailDiv);
 
-
-  const labelDiv1 = document.createElement("div");
-  labelDiv1.id= 'labelDiv';
-  labelDiv1.style.width = "135px";
-
-  const brandLabel = document.createElement("p");
-  brandLabel.id= 'infoLabel';
-  brandLabel.innerHTML = 'Brand'
-  brandLabel.style.width = "120px";
-  labelDiv1.appendChild(brandLabel);
-
-  const brandInfo = document.createElement("p");
-  brandInfo.id= 'info';
-  brandInfo.innerHTML = armadio[id].Brand
-  brandInfo.style.width = "120px";
-  labelDiv1.appendChild(brandInfo);
-
-  const sizeLabel = document.createElement("p");
-  sizeLabel.id= 'infoLabel';
-  sizeLabel.innerHTML = 'Size'
-  labelDiv1.appendChild(sizeLabel);
-
-  const sizeInfo = document.createElement("p");
-  sizeInfo.id= 'info';
-  sizeInfo.innerHTML = 'M'
-  labelDiv1.appendChild(sizeInfo);
-
-  card.appendChild(labelDiv1);
-
-
   const labelDiv2 = document.createElement("div");
   labelDiv2.id= 'labelDiv2';
 
   const lastUseLabel = document.createElement("p");
   lastUseLabel.id= 'infoLabel';
-  lastUseLabel.innerHTML = 'Last use'
+  lastUseLabel.innerHTML = 'You didn’t use this garment since'
   labelDiv2.appendChild(lastUseLabel);
 
   const lastUse = document.createElement("p");
@@ -687,7 +658,7 @@ function showSingleGarment(id, layer){
 
   const nUseLabel = document.createElement("p");
   nUseLabel.id= 'infoLabel';
-  nUseLabel.innerHTML = 'N° of uses'
+  nUseLabel.innerHTML = 'You used this garment'
   labelDiv2.appendChild(nUseLabel);
 
   const nUse = document.createElement("p");
@@ -700,7 +671,20 @@ function showSingleGarment(id, layer){
   const personalNotes = document.createElement("p");
   personalNotes.innerHTML='Personal Notes'
   personalNotes.style.textAlign= 'left'
+  personalNotes.style.marginLeft= '0px'
+  personalNotes.style.fontSize= '20px'
+  personalNotes.style.fontWeight= '600'
+  personalNotes.style.display= 'inline-block'
   card.appendChild(personalNotes);
+
+  const info = document.createElement('object');
+  info.id= 'infoCircle';
+  info.data = "./svg/edit.svg";
+  info.width = "22";
+  info.height = "22";
+  info.style.marginBottom='6px';
+  info.style.marginLeft='4px';
+  card.appendChild(info);
 
   const personalNotesDiv = document.createElement("div");
   personalNotesDiv.style.border = '1px solid #C6C6C6'
@@ -712,6 +696,12 @@ function showSingleGarment(id, layer){
   personalNotesDiv.style.fontSize = '14px'
   personalNotesDiv.innerHTML= armadio[id].Description_keywords
   card.appendChild(personalNotesDiv);
+
+  const tagDiv = document.createElement("div");
+  tagDiv.id= 'tagDiv';
+  tagDiv.style= "position: absolute"
+  tagDiv.style= "margin-top: -260px"
+  card.appendChild(tagDiv);
   
 
   const tag1 = document.createElement("div");
@@ -724,7 +714,7 @@ function showSingleGarment(id, layer){
     tag1.style.backgroundColor = 'rgb('+ armadio[id].Color_code[0]+', '+ armadio[id].Color_code[1]+', '+ armadio[id].Color_code[2]+', 1)'
   }
   
-  card.appendChild(tag1);
+  tagDiv.appendChild(tag1);
 
   if(armadio[id].Style[1]){
 
@@ -737,7 +727,7 @@ function showSingleGarment(id, layer){
     }else{
       tag2.style.backgroundColor = 'rgb('+ armadio[id].Color_code[0]+', '+ armadio[id].Color_code[1]+', '+ armadio[id].Color_code[2]+', 1)'
     }
-    card.appendChild(tag2);
+    tagDiv.appendChild(tag2);
 
   }
 
@@ -752,16 +742,21 @@ function showSingleGarment(id, layer){
     }else{
       tag3.style.backgroundColor = 'rgb('+ armadio[id].Color_code[0]+', '+ armadio[id].Color_code[1]+', '+ armadio[id].Color_code[2]+', 1)'
     }
-    card.appendChild(tag3);
+    tagDiv.appendChild(tag3);
 
   }
 
 
 
 
+
   document.getElementById(phase).appendChild(card);
+  tagDiv.style.marginLeft = String((card.offsetWidth/2) - (tagDiv.offsetWidth/2)+15) + "px"
 
 }
+
+
+
 
 
 
